@@ -293,7 +293,7 @@ body{
   font-weight: 500;
 }
 
-/* Screen 1 Cards (Fixed Text Heights) */
+/* Screen 1 Cards */
 .cards{
   display:flex;
   flex-direction:column;
@@ -665,6 +665,7 @@ body{
  const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar');
  let current=0;
  let isMusicPlaying=false;
+ let isCountingDown=false;
  
  function show(n){
    current=Math.max(0,Math.min(n,screens.length-1));
@@ -704,7 +705,7 @@ body{
    });
  }
 
- /* Music Logic */
+ /* Music & Gateway Logic */
  const music=document.getElementById('music'),mb=document.getElementById('musicBtn');
  const enterBtn=document.getElementById('enterBtn'),musicWarn=document.getElementById('musicWarn');
 
@@ -732,7 +733,27 @@ body{
      musicWarn.style.display='block';
      return;
    }
-   show(1);
+   if(isCountingDown) return;
+   
+   isCountingDown = true;
+   let timeLeft = 20;
+   enterBtn.disabled = true;
+   enterBtn.style.opacity = "0.85";
+   enterBtn.textContent = `Ochilishiga: ${timeLeft} soniya... ⏳`;
+   
+   const timer = setInterval(()=>{
+     timeLeft--;
+     if(timeLeft > 0){
+       enterBtn.textContent = `Ochilishiga: ${timeLeft} soniya... ⏳`;
+     } else {
+       clearInterval(timer);
+       enterBtn.textContent = "Bu yerni bosing ❤️";
+       enterBtn.disabled = false;
+       enterBtn.style.opacity = "1";
+       isCountingDown = false;
+       show(1);
+     }
+   }, 1000);
  });
 
  /* Real-time Clock */
