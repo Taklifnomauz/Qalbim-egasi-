@@ -13,7 +13,7 @@ html,body{width:100%;height:100%}
 body{
   font-family:'Plus Jakarta Sans', Arial, sans-serif;
   color:#2d1a1e;
-  background:#180e12;
+  background:#120709;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -21,7 +21,13 @@ body{
   padding:0;
 }
 
-.stage{width:100%;height:100dvh;display:flex;align-items:center;justify-content:center}
+.stage{
+  width:100%;
+  height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
 .app{
   width:100%;
@@ -30,52 +36,41 @@ body{
   margin:auto;
   position:relative;
   overflow:hidden;
-  background: linear-gradient(160deg, #fffaf5 0%, #fdf0e6 45%, #f8e1d4 100%);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(160deg, #fffaf5 0%, #f9ece6 45%, #f2d8d0 100%) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
 /* Glassmorphism Header */
 .top{
-  height:70px;
+  height:65px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 24px;
+  padding:0 20px;
   position:absolute;
   left:0;
   right:0;
   top:0;
   z-index:50;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(136, 14, 30, 0.08);
 }
 .brand{
-  font-size:13px;
+  font-size:14px;
   font-weight:800;
-  letter-spacing:.22em;
-  color: #880e1f;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  letter-spacing:.25em;
+  color: #880e1f !important;
 }
-/* Tochka o'rniga mitti nazokatli indikator */
-.brand i{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#a81c32;
-  box-shadow: 0 0 8px rgba(168, 28, 50, 0.6);
-}
+
 .music{
-  width:42px;
-  height:42px;
+  width:38px;
+  height:38px;
   border:1px solid rgba(136, 14, 30, 0.15);
   border-radius:50%;
   background:rgba(255,255,255,0.9);
-  font-size:16px;
+  font-size:15px;
   color:#880e1f;
   cursor:pointer;
   display: flex;
@@ -83,9 +78,6 @@ body{
   justify-content: center;
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(136, 14, 30, 0.08);
-}
-.music:hover{
-  transform: scale(1.05);
 }
 .music.on{
   background:#880e1f;
@@ -96,7 +88,7 @@ body{
 /* Progress bar */
 .bar{
   position:absolute;
-  top:70px;
+  top:65px;
   left:0;
   right:0;
   height:4px;
@@ -109,16 +101,16 @@ body{
   width:25%;
   background: linear-gradient(90deg, #a81c32, #880e1f);
   transition:width .4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 0 2px 2px 0;
 }
 
 /* Screen base */
 .screen{
   position:absolute;
   inset:0;
-  padding:85px 24px 30px;
+  padding:80px 20px 24px;
   display:flex;
   flex-direction:column;
+  justify-content:space-between;
   opacity:0;
   visibility:hidden;
   pointer-events:none;
@@ -135,10 +127,15 @@ body{
   transition-delay:0s;
 }
 
-/* Badges & Text */
+.content-wrap{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+
 .badge{
   align-self:flex-start;
-  padding:8px 16px;
+  padding:6px 14px;
   border:1px solid rgba(168, 28, 50, 0.18);
   border-radius:999px;
   background:rgba(255,255,255,0.85);
@@ -146,56 +143,56 @@ body{
   font-size:11px;
   font-weight:700;
   letter-spacing:.12em;
-  color:#a81c32;
-  box-shadow: 0 4px 12px rgba(168, 28, 50, 0.06);
+  color:#a81c32 !important;
 }
 .over{
   font-size:11px;
   font-weight:800;
-  letter-spacing:.22em;
-  color:#a81c32;
+  letter-spacing:.2em;
+  color:#a81c32 !important;
   text-transform: uppercase;
 }
 .hero{
-  margin-top:14px;
-  position:relative;
-  z-index:4;
+  margin-top:10px;
 }
 .hero h1, h2{
   font-family:'Playfair Display', serif;
 }
 .hero h1{
-  font-size:clamp(34px,7.5vw,44px);
-  line-height:1.1;
-  letter-spacing:-.02em;
-  color:#3b0910;
+  font-size:clamp(28px,6vw,40px);
+  line-height:1.15;
+  color:#3b0910 !important;
   font-weight: 700;
 }
 .hero h1 em, h2 em{
   font-style:italic;
-  color:#a81c32;
+  color:#a81c32 !important;
   background: linear-gradient(120deg, #a81c32, #730a19);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .lead{
-  margin-top:10px;
-  font-size:14px;
-  line-height:1.6;
-  color:#5c242c;
+  margin-top:8px;
+  font-size:13.5px;
+  line-height:1.5;
+  color:#5c242c !important;
   font-weight: 500;
 }
 
 /* Buttons */
+.btn-container{
+  width:100%;
+  margin-top:16px;
+}
 .btn{
   border:0;
   border-radius:999px;
-  padding:16px 28px;
+  padding:15px 24px;
   font-size:14px;
   font-weight:700;
   font-family: 'Plus Jakarta Sans', sans-serif;
   cursor:pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -205,154 +202,122 @@ body{
   transform: scale(0.97);
 }
 .primary{
-  background: linear-gradient(135deg, #880e1f 0%, #540813 100%);
-  color:#fff;
-  box-shadow:0 10px 25px rgba(136, 14, 30, 0.25);
-}
-.primary:hover{
-  box-shadow:0 14px 30px rgba(136, 14, 30, 0.35);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #880e1f 0%, #540813 100%) !important;
+  color:#fff !important;
+  box-shadow:0 8px 20px rgba(136, 14, 30, 0.25);
+  width:100%;
 }
 .secondary{
-  background:rgba(255,255,255,0.9);
-  color:#730a19;
+  background:rgba(255,255,255,0.9) !important;
+  color:#730a19 !important;
   border:1px solid rgba(136, 14, 30, 0.18);
-  backdrop-filter: blur(8px);
-}
-.secondary:hover{
-  background:#fff;
-}
-.next-first{
-  margin-top:20px;
-  width: 100%;
 }
 .hint{
   font-size:11px;
-  color:#a81c32;
-  margin-top:10px;
+  color:#a81c32 !important;
+  margin-top:6px;
   text-align: center;
   font-weight: 600;
 }
 
-/* Modern Image Area - Moslashuvchan va kontentni suruvchi */
+/* Image Area */
 .illustration{
-  margin-top:16px;
+  margin:14px 0;
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
 }
 .hero-img{
   width:100%;
-  max-width:380px;
+  max-width:100%;
   height:auto;
   max-height:260px;
   object-fit:cover;
-  border-radius:20px;
-  box-shadow: 0 15px 35px rgba(136, 14, 30, 0.18);
-  border: 3px solid rgba(255, 255, 255, 0.9);
-  display:block;
+  border-radius:18px;
+  box-shadow: 0 12px 30px rgba(136, 14, 30, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
-/* Screen 1, 2, 3 components */
+/* Other screens */
 .num{
-  width:48px;
-  height:48px;
+  width:44px;
+  height:44px;
   display:grid;
   place-items:center;
   background: linear-gradient(135deg, #a81c32, #880e1f);
   color:#fff;
-  border-radius:18px;
+  border-radius:14px;
   font-weight:800;
   font-size:15px;
-  margin-bottom:16px;
-  box-shadow: 0 8px 20px rgba(168, 28, 50, 0.25);
+  margin-bottom:12px;
 }
 .screen h2{
-  font-size:clamp(30px, 7vw, 40px);
-  line-height:1.1;
-  color: #3b0910;
+  font-size:clamp(26px, 6vw, 36px);
+  line-height:1.15;
+  color: #3b0910 !important;
 }
 .quote{
-  margin-top:18px;
-  padding:20px 22px;
-  border-radius:22px;
+  margin-top:12px;
+  padding:16px 18px;
+  border-radius:18px;
   background:rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
   border:1px solid rgba(255,255,255,0.9);
-  box-shadow:0 15px 35px rgba(136, 14, 30, 0.06);
-  color:#5c242c;
-  font-size:14.5px;
-  line-height:1.65;
+  color:#5c242c !important;
+  font-size:13.5px;
+  line-height:1.6;
   position:relative;
   font-weight: 500;
-}
-.quote:after{
-  content:'“';
-  position:absolute;
-  right:18px;
-  bottom:-15px;
-  font-family: 'Playfair Display', serif;
-  font-size:85px;
-  color:rgba(168, 28, 50, 0.12);
-  line-height: 1;
-  pointer-events: none;
 }
 
 /* Cards & Plans */
 .cards{
   display:grid;
   grid-template-columns:1fr;
-  gap:14px;
-  margin-top:18px;
+  gap:10px;
+  margin-top:12px;
 }
 .card{
-  padding:18px;
-  border-radius:20px;
+  padding:14px;
+  border-radius:16px;
   background:rgba(255,255,255,0.88);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow:0 10px 25px rgba(136, 14, 30, 0.05);
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 12px;
 }
 .card-icon{
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: #fde8eb;
   display: grid;
   place-items: center;
-  font-size: 22px;
+  font-size: 20px;
   flex-shrink: 0;
 }
 .card-content small{
   font-size:10px;
-  letter-spacing:.18em;
-  color:#a81c32;
+  letter-spacing:.15em;
+  color:#a81c32 !important;
   font-weight:800;
 }
 .card-content strong{
   display:block;
-  margin:3px 0 2px;
-  color:#3b0910;
-  font-size:15px;
-  font-weight: 700;
+  margin:2px 0;
+  color:#3b0910 !important;
+  font-size:14px;
 }
 .card-content p{
-  font-size:13px;
-  color:#5c242c;
-  line-height:1.4;
+  font-size:12px;
+  color:#5c242c !important;
 }
 
 .actions{
   margin-top:auto;
-  padding-top:20px;
+  padding-top:12px;
   display:flex;
-  justify-content:space-between;
-  gap:12px;
+  gap:10px;
 }
 .actions .btn{
   flex:1;
@@ -361,57 +326,53 @@ body{
 /* Timeline */
 .timeline{
   position:relative;
-  margin-top:18px;
+  margin-top:12px;
 }
 .timeline:before{
   content:'';
   position:absolute;
-  left:23px;
-  top:24px;
-  bottom:24px;
+  left:20px;
+  top:20px;
+  bottom:20px;
   width:2px;
   background:linear-gradient(to bottom, #a81c32, #fde8eb);
 }
 .plan{
   display:grid;
-  grid-template-columns:48px 1fr;
-  gap:16px;
-  margin-bottom:16px;
+  grid-template-columns:40px 1fr;
+  gap:14px;
+  margin-bottom:10px;
   position:relative;
 }
 .plan>b{
-  width:48px;
-  height:48px;
+  width:40px;
+  height:40px;
   display:grid;
   place-items:center;
-  border-radius:16px;
+  border-radius:12px;
   background:#ffffff;
   border: 2px solid #a81c32;
   color: #880e1f;
   font-weight: 800;
-  box-shadow: 0 4px 12px rgba(168, 28, 50, 0.1);
   z-index:2;
 }
 .plan-content{
   background: rgba(255, 255, 255, 0.82);
-  padding: 15px 18px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 12px 14px;
+  border-radius: 14px;
 }
 .plan-content small{
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
-  color: #a81c32;
-  letter-spacing: 0.1em;
+  color: #a81c32 !important;
 }
 .plan h3{
-  font-size:15px;
-  color: #3b0910;
-  margin: 2px 0 3px;
+  font-size:14px;
+  color: #3b0910 !important;
 }
 .plan p{
-  font-size: 13px;
-  color: #5c242c;
+  font-size: 12px;
+  color: #5c242c !important;
 }
 
 /* Decision & Final */
@@ -421,88 +382,71 @@ body{
   justify-content:center;
 }
 .decision-sticker, .final-sticker{
-  width:105px;
-  height:105px;
-  margin-bottom:14px;
+  width:90px;
+  height:90px;
+  margin-bottom:10px;
   animation: float 3s ease-in-out infinite;
 }
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
 }
 
-.decision .lead{
-  max-width:320px;
-}
 .decision-actions{
-  margin-top:28px;
+  margin-top:20px;
   display:flex;
   flex-direction: column;
-  gap:12px;
+  gap:10px;
   width:100%;
   max-width: 320px;
-  position:relative;
 }
 .yes-btn{
-  background: linear-gradient(135deg, #a81c32 0%, #880e1f 100%);
-  color:#fff;
-  font-size: 15px;
-  box-shadow:0 12px 30px rgba(168, 28, 50, 0.3);
+  background: linear-gradient(135deg, #a81c32 0%, #880e1f 100%) !important;
+  color:#fff !important;
   width: 100%;
-}
-.yes-btn:hover{
-  box-shadow:0 16px 35px rgba(168, 28, 50, 0.4);
 }
 .no-btn{
-  background:rgba(255,255,255,0.85);
-  color:#730a19;
+  background:rgba(255,255,255,0.85) !important;
+  color:#730a19 !important;
   border:1px solid rgba(136, 14, 30, 0.18);
   width: 100%;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .sign{
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
-  font-size:28px;
-  color:#a81c32;
-  margin:20px 0 14px;
+  font-size:26px;
+  color:#a81c32 !important;
+  margin:14px 0 8px;
   font-weight: 700;
 }
-.restart{
-  margin-top: 8px;
-}
 
-/* Kompyuter va planshetlar uchun moslashuvchan Responsive tuzilish */
+/* KOMPYUTER VA PLANSHET UCHUN KATTA O'LCHAM (MEDIA QUERY) */
 @media(min-width:768px){
-  body{padding:20px}
+  body{
+    padding:30px;
+  }
   .app{
-    max-width:880px;
-    height:min(850px, 92dvh);
-    border-radius:36px;
-    border: 8px solid rgba(255, 255, 255, 0.2);
-    box-shadow:0 30px 60px rgba(0,0,0,0.45);
+    max-width: 650px; /* Kompyuterda o'rta ekranga mos optimal kenglik */
+    height: 850px;
+    max-height: 90dvh;
+    border-radius:32px;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
   }
   .screen{
-    padding:95px 48px 36px;
+    padding: 90px 40px 32px;
+  }
+  .hero-img{
+    max-height: 320px;
   }
   .cards{
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .hero h1, .screen h2{
-    font-size: 44px;
-  }
-  .hero-img{
-    max-width: 450px;
-    max-height: 280px;
+    gap: 14px;
   }
   .decision-actions{
     flex-direction: row;
-    max-width: 480px;
-  }
-  .decision-actions .btn{
-    flex: 1;
+    max-width: 100%;
   }
 }
 </style>
@@ -511,52 +455,58 @@ body{
 <div class="stage">
 <div class="app">
 <header class="top">
-  <div class="brand"><i></i> FARIDA</div>
+  <div class="brand">FARIDA</div>
   <button class="music" id="musicBtn" aria-label="Musiqani yoqish">♪</button>
 </header>
 <div class="bar"><b id="bar"></b></div>
 
 <!-- SCREEN 0: Hero & Image -->
 <section class="screen active" id="s0">
-  <div class="badge" id="liveTime">yuklanmoqda…</div>
-  <div class="hero">
-    <div class="over">SIZ UCHUN</div>
-    <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
-    <p class="lead">Salom Farida! Men Mirabbosman — samimiy suhbat va yoqimli kayfiyatga to'la uchrashuv uchun seni chin dildan taklif qilaman.</p>
-  </div>
-  
-  <div class="illustration">
-    <img src="1.jpg" alt="Mirabbos va Farida" class="hero-img">
+  <div class="content-wrap">
+    <div class="badge" id="liveTime">yuklanmoqda…</div>
+    <div class="hero">
+      <div class="over">SIZ UCHUN</div>
+      <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
+      <p class="lead">Salom Farida! Men Mirabbosman — samimiy suhbat va yoqimli kayfiyatga to'la uchrashuv uchun seni chin dildan taklif qilaman.</p>
+    </div>
+    
+    <div class="illustration">
+      <img src="1.jpg" alt="Mirabbos va Farida" class="hero-img">
+    </div>
   </div>
 
-  <button class="btn primary next next-first">Taklifnomani ochish &nbsp;→</button>
-  <div class="hint">Davom etish uchun bosing</div>
+  <div class="btn-container">
+    <button class="btn primary next">Taklifnomani ochish &nbsp;→</button>
+    <div class="hint">Davom etish uchun bosing</div>
+  </div>
 </section>
 
 <!-- SCREEN 1: Invitation Message & Venue/Time -->
 <section class="screen" id="s1">
-  <div class="num">01</div>
-  <div class="over">SIZGA</div>
-  <h2>Farida</h2>
-  <div class="quote">
-    Men, Mirabbos, seni yaxshi kayfiyat va samimiy suhbatga boy uchrashuvga taklif qilaman. Tashrifing bu kunni yanada chiroyli qiladi.
-  </div>
-  
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon">📍</div>
-      <div class="card-content">
-        <small>MANZIL</small>
-        <strong>Adoda yoki TSUM</strong>
-        <p>Aniq joy shinam va shaffof muhitda belgilanadi.</p>
-      </div>
+  <div class="content-wrap">
+    <div class="num">01</div>
+    <div class="over">SIZGA</div>
+    <h2>Farida</h2>
+    <div class="quote">
+      Men, Mirabbos, seni yaxshi kayfiyat va samimiy suhbatga boy uchrashuvga taklif qilaman. Tashrifing bu kunni yanada chiroyli qiladi.
     </div>
-    <div class="card">
-      <div class="card-icon">⏰</div>
-      <div class="card-content">
-        <small>SANA VA VAQT</small>
-        <strong>Kelishiladi</strong>
-        <p>Siz uchun eng qulay sana va vaqtni tanlaymiz.</p>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <div class="card-content">
+          <small>MANZIL</small>
+          <strong>Adoda yoki TSUM</strong>
+          <p>Aniq joy shinam va shaffof muhitda belgilanadi.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <div class="card-content">
+          <small>SANA VA VAQT</small>
+          <strong>Kelishiladi</strong>
+          <p>Siz uchun eng qulay sana va vaqtni tanlaymiz.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -569,33 +519,35 @@ body{
 
 <!-- SCREEN 2: Program Plan -->
 <section class="screen" id="s2">
-  <div class="num">02</div>
-  <div class="over">UCHRASHUV REJASI</div>
-  <h2>Bugungi dastur</h2>
-  
-  <div class="timeline">
-    <div class="plan">
-      <b>1</b>
-      <div class="plan-content">
-        <small>01-BOSQICH</small>
-        <h3>Yoqimli suhbat</h3>
-        <p>Iliq qahva yoki choy ustida samimiy va erkin gurung.</p>
+  <div class="content-wrap">
+    <div class="num">02</div>
+    <div class="over">UCHRASHUV REJASI</div>
+    <h2>Bugungi dastur</h2>
+    
+    <div class="timeline">
+      <div class="plan">
+        <b>1</b>
+        <div class="plan-content">
+          <small>01-BOSQICH</small>
+          <h3>Yoqimli suhbat</h3>
+          <p>Iliq qahva yoki choy ustida samimiy va erkin gurung.</p>
+        </div>
       </div>
-    </div>
-    <div class="plan">
-      <b>2</b>
-      <div class="plan-content">
-        <small>02-BOSQICH</small>
-        <h3>Birgalikdagi vaqt</h3>
-        <p>Ajoyib joyda sayr qilish va esda qolarli foto-lahzalar.</p>
+      <div class="plan">
+        <b>2</b>
+        <div class="plan-content">
+          <small>02-BOSQICH</small>
+          <h3>Birgalikdagi vaqt</h3>
+          <p>Ajoyib joyda sayr qilish va esda qolarli foto-lahzalar.</p>
+        </div>
       </div>
-    </div>
-    <div class="plan">
-      <b>3</b>
-      <div class="plan-content">
-        <small>03-BOSQICH</small>
-        <h3>Chiroyli yakun</h3>
-        <p>Ajoyib shirinliklar hamda ko'tarinki kayfiyat ulashish.</p>
+      <div class="plan">
+        <b>3</b>
+        <div class="plan-content">
+          <small>03-BOSQICH</small>
+          <h3>Chiroyli yakun</h3>
+          <p>Ajoyib shirinliklar hamda ko'tarinki kayfiyat ulashish.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -608,7 +560,6 @@ body{
 
 <!-- SCREEN 3: Decision Screen -->
 <section class="screen decision" id="s3">
-  <!-- Ultra Modern Gem & Heart Sticker -->
   <div class="decision-sticker">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="3"/>
@@ -632,7 +583,6 @@ body{
 
 <!-- SCREEN 4: Final Screen -->
 <section class="screen final" id="s4">
-  <!-- Ultra Modern Tulip Sticker -->
   <div class="final-sticker">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="4"/>
