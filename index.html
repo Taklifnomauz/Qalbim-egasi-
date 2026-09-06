@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taklifnoma</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-state-1" id="page-body">
+
+    <div class="bg-shapes">
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+    </div>
+
+    <!-- 1-SAHIFA: Kirish -->
+    <div id="intro-card" class="card">
+        <div class="card-icon">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e0ac2a" stroke-width="1.4">
+                <path d="M12 3c-2.2 0-4 2.6-3 4.6C7 7 5 8.6 5.2 11c1.4-0.6 2.6-1.6 3-2.6 0.4 1.6 1.4 3 2.5 3.8-0.4-2 0.2-4.4 1.3-5.6z"></path>
+                <path d="M12 12v9" stroke-linecap="round"></path>
+                <path d="M12 16c-1.6-0.6-2.6 0-3.4 1.4" stroke-linecap="round"></path>
+            </svg>
+        </div>
+
+        <h2>Farida, siz uchun bir taklif bor</h2>
+        <p class="subtitle">
+            Kichkina, lekin chin qalbimdan chiqqan bir taklif tayyorladim. Ko'rish uchun tugmani bosing.
+        </p>
+        <button id="start-btn" class="main-btn">Ochish ✨</button>
+    </div>
+
+    <!-- 2-SAHIFA: Asosiy Taklif -->
+    <div id="proposal-card" class="card hidden">
+        <div class="card-icon">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#e0ac2a" stroke-width="1.4">
+                <path d="M12 3c-2.2 0-4 2.6-3 4.6C7 7 5 8.6 5.2 11c1.4-0.6 2.6-1.6 3-2.6 0.4 1.6 1.4 3 2.5 3.8-0.4-2 0.2-4.4 1.3-5.6z"></path>
+                <path d="M12 12v9" stroke-linecap="round"></path>
+                <path d="M12 16c-1.6-0.6-2.6 0-3.4 1.4" stroke-linecap="round"></path>
+            </svg>
+        </div>
+
+        <h2 class="romantic-title">Farida</h2>
+        <div class="divider"><span>♦</span></div>
+
+        <p class="message">
+            Ozgina yuragimdan chiqqan taklif — yonimda bo'lishingni istayman.<br><br>
+            Seni <b>uchrashuvga</b> chin qalbimdan taklif etaman!
+        </p>
+
+        <div class="meta-box">
+            <div class="meta-row">
+                <span class="meta-label">MANZIL</span>
+                <span class="meta-value">ADO'da yoki TSUM'da</span>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button id="yes-btn" class="main-btn yes-btn">Taklifni qabul qilaman 💛</button>
+            <button id="no-btn" class="main-btn no-btn">Yo'q</button>
+        </div>
+    </div>
+
+    <!-- 3-SAHIFA: Yakuniy minnatdorchilik + reja -->
+    <div id="thanks-card" class="card hidden">
+        <div class="card-icon">
+            <span class="big-emoji">🎉</span>
+        </div>
+
+        <h2>Rahmat, Farida!</h2>
+        <div class="divider"><span>♦</span></div>
+
+        <p class="message">
+            Seni intizorlik bilan kutib qolaman!
+        </p>
+
+        <div class="plan-box">
+            <div class="plan-title">Uchrashuv rejasi</div>
+            <div class="plan-row">
+                <span class="plan-num">1</span>
+                <span class="plan-text">...</span>
+            </div>
+            <div class="plan-row">
+                <span class="plan-num">2</span>
+                <span class="plan-text">...</span>
+            </div>
+            <div class="plan-row">
+                <span class="plan-num">3</span>
+                <span class="plan-text">...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fon musiqasi: music.mp3 faylini shu papkaga qo'shing -->
+    <audio id="bgMusic" loop src="music.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
