@@ -3,103 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taklifnoma</title>
+    <meta name="theme-color" content="#f4c928">
+    <title>Uchrashuvga taklifnoma — Farida</title>
 
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-state-1" id="page-body">
 
-    <div class="bg-shapes">
-        <span class="shape s1"></span>
-        <span class="shape s2"></span>
-        <span class="shape s3"></span>
-    </div>
+<body>
+    <main class="invitation-shell">
 
-    <!-- 1-SAHIFA: Kirish -->
-    <div id="intro-card" class="card">
-        <div class="card-icon">
-            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e0ac2a" stroke-width="1.4">
-                <path d="M12 3c-2.2 0-4 2.6-3 4.6C7 7 5 8.6 5.2 11c1.4-0.6 2.6-1.6 3-2.6 0.4 1.6 1.4 3 2.5 3.8-0.4-2 0.2-4.4 1.3-5.6z"></path>
-                <path d="M12 12v9" stroke-linecap="round"></path>
-                <path d="M12 16c-1.6-0.6-2.6 0-3.4 1.4" stroke-linecap="round"></path>
-            </svg>
-        </div>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-glow hero-glow-yellow"></div>
+            <div class="hero-glow hero-glow-blue"></div>
 
-        <h2>Farida, siz uchun bir taklif bor</h2>
-        <p class="subtitle">
-            Kichkina, lekin chin qalbimdan chiqqan bir taklif tayyorladim. Ko'rish uchun tugmani bosing.
-        </p>
-        <button id="start-btn" class="main-btn">Ochish ✨</button>
-    </div>
+            <div class="tulip tulip-1"><span></span></div>
+            <div class="tulip tulip-2"><span></span></div>
+            <div class="tulip tulip-3"><span></span></div>
 
-    <!-- 2-SAHIFA: Asosiy Taklif -->
-    <div id="proposal-card" class="card hidden">
-        <div class="card-icon">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#e0ac2a" stroke-width="1.4">
-                <path d="M12 3c-2.2 0-4 2.6-3 4.6C7 7 5 8.6 5.2 11c1.4-0.6 2.6-1.6 3-2.6 0.4 1.6 1.4 3 2.5 3.8-0.4-2 0.2-4.4 1.3-5.6z"></path>
-                <path d="M12 12v9" stroke-linecap="round"></path>
-                <path d="M12 16c-1.6-0.6-2.6 0-3.4 1.4" stroke-linecap="round"></path>
-            </svg>
-        </div>
-
-        <h2 class="romantic-title">Farida</h2>
-        <div class="divider"><span>♦</span></div>
-
-        <p class="message">
-            Ozgina yuragimdan chiqqan taklif — yonimda bo'lishingni istayman.<br><br>
-            Seni <b>uchrashuvga</b> chin qalbimdan taklif etaman!
-        </p>
-
-        <div class="meta-box">
-            <div class="meta-row">
-                <span class="meta-label">MANZIL</span>
-                <span class="meta-value">ADO'da yoki TSUM'da</span>
+            <div class="hero-top">
+                <span class="eyebrow">SPECIAL INVITATION</span>
+                <span class="date-chip">2026</span>
             </div>
-        </div>
 
-        <div class="buttons-container">
-            <button id="yes-btn" class="main-btn yes-btn">Taklifni qabul qilaman 💛</button>
-            <button id="no-btn" class="main-btn no-btn">Yo'q</button>
-        </div>
-    </div>
-
-    <!-- 3-SAHIFA: Yakuniy minnatdorchilik + reja -->
-    <div id="thanks-card" class="card hidden">
-        <div class="card-icon">
-            <span class="big-emoji">🎉</span>
-        </div>
-
-        <h2>Rahmat, Farida!</h2>
-        <div class="divider"><span>♦</span></div>
-
-        <p class="message">
-            Seni intizorlik bilan kutib qolaman!
-        </p>
-
-        <div class="plan-box">
-            <div class="plan-title">Uchrashuv rejasi</div>
-            <div class="plan-row">
-                <span class="plan-num">1</span>
-                <span class="plan-text">...</span>
+            <div class="hero-content">
+                <p class="small-label">SIZ UCHUN</p>
+                <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
+                <p class="intro">
+                    Samimiy suhbat, chiroyli kayfiyat va yoqimli uchrashuv uchun
+                    sizni maxsus taklif qilaman.
+                </p>
             </div>
-            <div class="plan-row">
-                <span class="plan-num">2</span>
-                <span class="plan-text">...</span>
-            </div>
-            <div class="plan-row">
-                <span class="plan-num">3</span>
-                <span class="plan-text">...</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- Fon musiqasi: music.mp3 faylini shu papkaga qo'shing -->
-    <audio id="bgMusic" loop src="music.mp3"></audio>
+            <div class="scroll-note">
+                <span class="line"></span>
+                <span>pastga suring</span>
+            </div>
+        </section>
+
+        <!-- DETAILS -->
+        <section class="details">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <div>
+                    <p class="section-kicker">UCHRASHUV EGASI</p>
+                    <h2>Farida</h2>
+                </div>
+            </div>
+
+            <div class="glass-card greeting">
+                <span class="quote-mark">“</span>
+                <p>
+                    Sizni yaxshi kayfiyat va samimiy suhbatga boy
+                    uchrashuvga taklif qilaman. Sizning tashrifingiz
+                    bu kunni yanada chiroyli qiladi.
+                </p>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <div class="icon">⌖</div>
+                    <span>MANZIL</span>
+                    <strong>Adoda yoki TSUM</strong>
+                    <small>aniq joy keyin belgilanadi</small>
+                </article>
+
+                <article class="info-card">
+                    <div class="icon">◷</div>
+                    <span>SANA VA VAQT</span>
+                    <strong>Kelishiladi</strong>
+                    <small>siz o‘zingiz qo‘shishingiz mumkin</small>
+                </article>
+            </div>
+        </section>
+
+        <!-- PLAN -->
+        <section class="plan">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <div>
+                    <p class="section-kicker">UCHRASHUV REJASI</p>
+                    <h2>Bugungi dastur</h2>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div>
+                        <span>01</span>
+                        <h3>Yoqimli suhbat</h3>
+                        <p>Bu yerga o‘zingizning rejangizni yozing.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div>
+                        <span>02</span>
+                        <h3>Birgalikdagi vaqt</h3>
+                        <p>Bu yerga ikkinchi bandni yozing.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div>
+                        <span>03</span>
+                        <h3>Yakuniy lahzalar</h3>
+                        <p>Bu yerga uchinchi bandni yozing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MUSIC -->
+        <section class="music-section">
+            <div class="music-card">
+                <div class="vinyl"><span>♪</span></div>
+                <div class="music-text">
+                    <span>OUR MOMENT</span>
+                    <strong>Uchrashuv uchun musiqa</strong>
+                    <small>music.mp3 faylini shu papkaga joylang</small>
+                </div>
+                <button id="musicBtn" class="music-btn" aria-label="Musiqani yoqish">
+                    ▶
+                </button>
+            </div>
+            <audio id="bgMusic" loop src="music.mp3"></audio>
+        </section>
+
+        <!-- FINAL -->
+        <section class="final">
+            <div class="final-flower">🌷</div>
+            <p class="section-kicker">SIZNI KUTAMAN</p>
+            <h2>Bir piyola suhbatdan<br><em>chiroyli xotiraga</em></h2>
+            <p class="final-text">
+                Kelishingizdan xursand bo‘laman. ✨
+            </p>
+            <div class="signature">Farida ♡</div>
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
