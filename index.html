@@ -40,7 +40,7 @@ body{
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
-/* Glassmorphism Header */
+/* Header & Live Clock */
 .top{
   height:65px;
   display:flex;
@@ -52,37 +52,63 @@ body{
   right:0;
   top:0;
   z-index:50;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(136, 14, 30, 0.08);
 }
+.brand-wrap{
+  display: flex;
+  flex-direction: column;
+}
 .brand{
   font-size:14px;
   font-weight:800;
-  letter-spacing:.25em;
+  letter-spacing:.2em;
   color: #880e1f !important;
+  line-height: 1.1;
+}
+.live-clock{
+  font-size: 11px;
+  font-weight: 600;
+  color: #a81c32;
+  margin-top: 2px;
 }
 
+/* Stylish Music Button */
 .music{
-  width:38px;
-  height:38px;
-  border:1px solid rgba(136, 14, 30, 0.15);
+  width:42px;
+  height:42px;
+  border:none;
   border-radius:50%;
-  background:rgba(255,255,255,0.9);
-  font-size:15px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe4e8 100%);
+  font-size:16px;
   color:#880e1f;
   cursor:pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(136, 14, 30, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(136, 14, 30, 0.15);
+  position: relative;
+}
+.music::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(168, 28, 50, 0.3);
+  animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
 }
 .music.on{
-  background:#880e1f;
+  background: linear-gradient(135deg, #a81c32 0%, #730a19 100%);
   color:#fff;
-  border-color: #880e1f;
+  box-shadow: 0 6px 20px rgba(168, 28, 50, 0.35);
 }
 
 /* Progress bar */
@@ -103,11 +129,11 @@ body{
   transition:width .4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Screen base */
+/* Screen Layouts */
 .screen{
   position:absolute;
   inset:0;
-  padding:80px 20px 24px;
+  padding:85px 20px 24px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -133,43 +159,26 @@ body{
   width:100%;
 }
 
-.badge{
-  align-self:flex-start;
-  padding:6px 14px;
-  border:1px solid rgba(168, 28, 50, 0.18);
-  border-radius:999px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.12em;
-  color:#a81c32 !important;
-}
 .over{
   font-size:11px;
   font-weight:800;
   letter-spacing:.2em;
   color:#a81c32 !important;
   text-transform: uppercase;
-}
-.hero{
-  margin-top:10px;
+  margin-bottom: 4px;
 }
 .hero h1, h2{
   font-family:'Playfair Display', serif;
 }
-.hero h1{
-  font-size:clamp(28px,6vw,40px);
-  line-height:1.15;
+.hero h1, .screen h2{
+  font-size:clamp(26px, 6vw, 36px);
+  line-height:1.2;
   color:#3b0910 !important;
   font-weight: 700;
 }
 .hero h1 em, h2 em{
   font-style:italic;
   color:#a81c32 !important;
-  background: linear-gradient(120deg, #a81c32, #730a19);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .lead{
   margin-top:8px;
@@ -220,45 +229,26 @@ body{
   font-weight: 600;
 }
 
-/* Image Area */
+/* Hero Image */
 .illustration{
-  margin:14px 0;
+  margin:16px 0;
   width:100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .hero-img{
   width:100%;
-  max-width:100%;
   height:auto;
-  max-height:260px;
+  max-height:250px;
   object-fit:cover;
   border-radius:18px;
   box-shadow: 0 12px 30px rgba(136, 14, 30, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
-/* Other screens */
-.num{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  background: linear-gradient(135deg, #a81c32, #880e1f);
-  color:#fff;
-  border-radius:14px;
-  font-weight:800;
-  font-size:15px;
-  margin-bottom:12px;
-}
-.screen h2{
-  font-size:clamp(26px, 6vw, 36px);
-  line-height:1.15;
-  color: #3b0910 !important;
-}
+/* Quote Box */
 .quote{
-  margin-top:12px;
+  margin-top:10px;
   padding:16px 18px;
   border-radius:18px;
   background:rgba(255,255,255,0.85);
@@ -266,29 +256,29 @@ body{
   color:#5c242c !important;
   font-size:13.5px;
   line-height:1.6;
-  position:relative;
   font-weight: 500;
 }
 
-/* Cards & Plans */
+/* Screen 1 Cards (Fixed Text Heights) */
 .cards{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-  margin-top:12px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
 }
 .card{
-  padding:14px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.88);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.9);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 14px;
+  box-shadow: 0 4px 15px rgba(136, 14, 30, 0.04);
 }
 .card-icon{
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: #fde8eb;
   display: grid;
@@ -297,25 +287,28 @@ body{
   flex-shrink: 0;
 }
 .card-content small{
-  font-size:10px;
+  font-size:10.5px;
   letter-spacing:.15em;
   color:#a81c32 !important;
   font-weight:800;
+  display: block;
 }
 .card-content strong{
   display:block;
-  margin:2px 0;
+  margin:3px 0 4px;
   color:#3b0910 !important;
-  font-size:14px;
+  font-size:15px;
+  line-height: 1.3;
 }
 .card-content p{
-  font-size:12px;
+  font-size:12.5px;
+  line-height:1.45;
   color:#5c242c !important;
 }
 
 .actions{
   margin-top:auto;
-  padding-top:12px;
+  padding-top:16px;
   display:flex;
   gap:10px;
 }
@@ -323,10 +316,10 @@ body{
   flex:1;
 }
 
-/* Timeline */
+/* Screen 2 Timeline (Fixed Padding) */
 .timeline{
   position:relative;
-  margin-top:12px;
+  margin-top:14px;
 }
 .timeline:before{
   content:'';
@@ -341,7 +334,7 @@ body{
   display:grid;
   grid-template-columns:40px 1fr;
   gap:14px;
-  margin-bottom:10px;
+  margin-bottom:12px;
   position:relative;
 }
 .plan>b{
@@ -357,46 +350,62 @@ body{
   z-index:2;
 }
 .plan-content{
-  background: rgba(255, 255, 255, 0.82);
-  padding: 12px 14px;
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(136, 14, 30, 0.03);
 }
 .plan-content small{
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 800;
   color: #a81c32 !important;
+  letter-spacing: 0.1em;
+  display: block;
 }
 .plan h3{
-  font-size:14px;
+  font-size:14.5px;
   color: #3b0910 !important;
+  margin: 2px 0 4px;
 }
 .plan p{
-  font-size: 12px;
+  font-size: 12.5px;
+  line-height: 1.45;
   color: #5c242c !important;
 }
 
-/* Decision & Final */
-.decision, .final{
+/* Screen 3 Enhanced (Decision Screen) */
+.decision{
   align-items:center;
   text-align:center;
   justify-content:center;
+  background: radial-gradient(circle at center, rgba(253, 232, 235, 0.8) 0%, rgba(242, 216, 208, 0.3) 100%);
 }
-.decision-sticker, .final-sticker{
-  width:90px;
-  height:90px;
-  margin-bottom:10px;
-  animation: float 3s ease-in-out infinite;
+.decision-decor{
+  margin-bottom: 20px;
+  position: relative;
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(3deg); }
+.heart-badge{
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #a81c32, #730a19);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 32px;
+  box-shadow: 0 10px 25px rgba(168, 28, 50, 0.3);
+  animation: heartPulse 2s infinite ease-in-out;
+}
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .decision-actions{
-  margin-top:20px;
+  margin-top:24px;
   display:flex;
   flex-direction: column;
-  gap:10px;
+  gap:12px;
   width:100%;
   max-width: 320px;
 }
@@ -404,50 +413,57 @@ body{
   background: linear-gradient(135deg, #a81c32 0%, #880e1f 100%) !important;
   color:#fff !important;
   width: 100%;
+  padding: 16px;
+  font-size: 15px;
 }
 .no-btn{
-  background:rgba(255,255,255,0.85) !important;
+  background:rgba(255,255,255,0.9) !important;
   color:#730a19 !important;
   border:1px solid rgba(136, 14, 30, 0.18);
   width: 100%;
+  padding: 14px;
+}
+
+/* Screen 4 (Final - Yellow Tulip) */
+.final{
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+}
+.tulip-sticker{
+  width:100px;
+  height:100px;
+  margin-bottom:14px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
 }
 
 .sign{
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
-  font-size:26px;
+  font-size:28px;
   color:#a81c32 !important;
-  margin:14px 0 8px;
+  margin:16px 0 12px;
   font-weight: 700;
 }
 
-/* KOMPYUTER VA PLANSHET UCHUN KATTA O'LCHAM (MEDIA QUERY) */
+/* Responsive / Computer View */
 @media(min-width:768px){
-  body{
-    padding:30px;
-  }
+  body{ padding:30px; }
   .app{
-    max-width: 650px; /* Kompyuterda o'rta ekranga mos optimal kenglik */
-    height: 850px;
+    max-width: 620px;
+    height: 820px;
     max-height: 90dvh;
     border-radius:32px;
-    border: 6px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 6px solid rgba(255, 255, 255, 0.35);
   }
-  .screen{
-    padding: 90px 40px 32px;
-  }
-  .hero-img{
-    max-height: 320px;
-  }
-  .cards{
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .decision-actions{
-    flex-direction: row;
-    max-width: 100%;
-  }
+  .screen{ padding: 90px 40px 32px; }
+  .hero-img{ max-height: 300px; }
+  .cards{ grid-template-columns: repeat(2, 1fr); display: grid; }
+  .decision-actions{ flex-direction: row; max-width: 100%; }
 }
 </style>
 </head>
@@ -455,15 +471,17 @@ body{
 <div class="stage">
 <div class="app">
 <header class="top">
-  <div class="brand">FARIDA</div>
+  <div class="brand-wrap">
+    <div class="brand">FARIDA</div>
+    <div class="live-clock" id="liveClock">00:00</div>
+  </div>
   <button class="music" id="musicBtn" aria-label="Musiqani yoqish">♪</button>
 </header>
 <div class="bar"><b id="bar"></b></div>
 
-<!-- SCREEN 0: Hero & Image -->
+<!-- SCREEN 0: Hero -->
 <section class="screen active" id="s0">
   <div class="content-wrap">
-    <div class="badge" id="liveTime">yuklanmoqda…</div>
     <div class="hero">
       <div class="over">SIZ UCHUN</div>
       <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
@@ -481,10 +499,9 @@ body{
   </div>
 </section>
 
-<!-- SCREEN 1: Invitation Message & Venue/Time -->
+<!-- SCREEN 1: Details -->
 <section class="screen" id="s1">
   <div class="content-wrap">
-    <div class="num">01</div>
     <div class="over">SIZGA</div>
     <h2>Farida</h2>
     <div class="quote">
@@ -520,7 +537,6 @@ body{
 <!-- SCREEN 2: Program Plan -->
 <section class="screen" id="s2">
   <div class="content-wrap">
-    <div class="num">02</div>
     <div class="over">UCHRASHUV REJASI</div>
     <h2>Bugungi dastur</h2>
     
@@ -558,19 +574,11 @@ body{
   </div>
 </section>
 
-<!-- SCREEN 3: Decision Screen -->
+<!-- SCREEN 3: Decision Screen (Enhanced Background & Design) -->
 <section class="screen decision" id="s3">
-  <div class="decision-sticker">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="3"/>
-      <circle cx="50" cy="50" r="40" fill="#fcf0f2"/>
-      <path d="M32 40 C32 30 42 26 50 34 C58 26 68 30 68 40 C68 54 50 66 50 72 C50 66 32 54 32 40 Z" fill="#a81c32"/>
-      <polygon points="50,22 56,30 50,38 44,30" fill="#f43f5e"/>
-      <path d="M18 28 L21 20 L24 28 L32 31 L24 34 L21 42 L18 34 L10 31 Z" fill="#880e1f"/>
-      <path d="M74 68 L76 62 L78 68 L84 70 L78 72 L76 78 L74 72 L68 70 Z" fill="#880e1f"/>
-    </svg>
+  <div class="decision-decor">
+    <div class="heart-badge">♥</div>
   </div>
-  <div class="num">♡</div>
   <div class="over">FARIDA, ERKATOYIM</div>
   <h2>Kelasizmi?</h2>
   <p class="lead">Uchrashuvga taklifimni qabul qilasizmi?</p>
@@ -581,22 +589,26 @@ body{
   </div>
 </section>
 
-<!-- SCREEN 4: Final Screen -->
+<!-- SCREEN 4: Final Screen (Yellow Tulip Flower) -->
 <section class="screen final" id="s4">
-  <div class="final-sticker">
+  <div class="tulip-sticker">
+    <!-- Yellow Tulip SVG Icon -->
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="4"/>
-      <path d="M50 82 V55" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
-      <path d="M50 55 C30 50 26 26 40 16 C46 22 48 22 50 16 C52 22 54 22 60 16 C74 26 70 50 50 55 Z" fill="#a81c32"/>
-      <path d="M42 20 C46 28 48 38 50 55 C52 38 54 28 58 20 C53 24 47 24 42 20 Z" fill="#e11d48"/>
-      <circle cx="43" cy="34" r="2.5" fill="#ffffff"/>
-      <circle cx="57" cy="34" r="2.5" fill="#ffffff"/>
-      <path d="M46 41 Q50 45 54 41" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-      <circle cx="39" cy="37" r="2.5" fill="#fda4af" opacity="0.6"/>
-      <circle cx="61" cy="37" r="2.5" fill="#fda4af" opacity="0.6"/>
+      <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="3"/>
+      <!-- Stem and Leaf -->
+      <path d="M50 82 V52" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 68 C40 65 35 55 38 48 C42 55 46 62 50 68 Z" fill="#22c55e"/>
+      <!-- Yellow Tulip Petals -->
+      <path d="M50 52 C32 46 28 22 42 14 C47 20 49 20 50 14 C51 20 53 20 58 14 C72 22 68 46 50 52 Z" fill="#eab308"/>
+      <path d="M43 18 C47 25 49 35 50 52 C51 35 53 25 57 18 C53 22 47 22 43 18 Z" fill="#facc15"/>
+      <!-- Face Expression -->
+      <circle cx="44" cy="32" r="2" fill="#451a03"/>
+      <circle cx="56" cy="32" r="2" fill="#451a03"/>
+      <path d="M47 37 Q50 40 53 37" fill="none" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="40" cy="35" r="2" fill="#f87171" opacity="0.6"/>
+      <circle cx="60" cy="35" r="2" fill="#f87171" opacity="0.6"/>
     </svg>
   </div>
-  <div class="num">03</div>
   <div class="over">SENI KUTAMAN</div>
   <h2>Bir piyola suhbatdan<br><em>chiroyli xotiraga</em></h2>
   <p class="lead">Kelishingdan juda xursand bo‘laman! ✨</p>
@@ -646,12 +658,13 @@ body{
          particleCount:160,
          spread:100,
          origin:{y:.6},
-         colors:['#a81c32','#e11d48','#ffffff','#f43f5e']
+         colors:['#eab308','#a81c32','#ffffff','#f43f5e']
        });
      }
    });
  }
 
+ /* Music Button logic */
  const music=document.getElementById('music'),mb=document.getElementById('musicBtn');
  mb.addEventListener('click',async()=>{
    if(music.paused){
@@ -660,7 +673,7 @@ body{
        mb.classList.add('on');
        mb.textContent='Ⅱ';
      }catch(e){
-       alert('music.mp3 topilmadi. Uni index.html bilan bir papkaga qo‘ying.');
+       alert('music.mp3 topilmadi. Uni loyiha papkasiga joylang.');
      }
    }else{
      music.pause();
@@ -669,12 +682,13 @@ body{
    }
  });
 
- const liveTime=document.getElementById('liveTime');
- const months=['yanvar','fevral','mart','aprel','may','iyun','iyul','avgust','sentabr','oktabr','noyabr','dekabr'];
+ /* Real-time Clock */
+ const liveClock=document.getElementById('liveClock');
+ const months=['yanv','fevr','mart','apr','may','iyun','iyul','avg','sep','okt','noy','dek'];
  function pad(n){return n<10?'0'+n:''+n}
  function updateClock(){
    const d=new Date();
-   liveTime.textContent=d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' · '+pad(d.getHours())+':'+pad(d.getMinutes());
+   liveClock.textContent=d.getDate()+' '+months[d.getMonth()]+' · '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
  }
  updateClock();
  setInterval(updateClock,1000);
