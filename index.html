@@ -1,154 +1,78 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4c928">
-    <title>Uchrashuvga taklifnoma — Farida</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102a43">
+<title>Farida — Uchrashuvga taklifnoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <main class="invitation-shell">
+<div class="bg-flower flower-a">🌷</div>
+<div class="bg-flower flower-b">🌷</div>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span> FARIDA</div>
+    <button id="musicBtn" class="music-toggle" aria-label="Musiqani yoqish">♪</button>
+  </header>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-glow hero-glow-yellow"></div>
-            <div class="hero-glow hero-glow-blue"></div>
+  <div class="progress"><span id="progressBar"></span></div>
 
-            <div class="tulip tulip-1"><span></span></div>
-            <div class="tulip tulip-2"><span></span></div>
-            <div class="tulip tulip-3"><span></span></div>
+  <main>
+    <section class="screen active" data-screen="0">
+      <div class="hero-badge">SPECIAL INVITATION</div>
+      <div class="hero-copy">
+        <p class="overline">SIZ UCHUN</p>
+        <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
+        <p class="lead">Birgalikda chiroyli vaqt o‘tkazish, samimiy suhbat va yangi xotiralar uchun sizni uchrashuvga taklif qilaman.</p>
+      </div>
+      <div class="tulips">
+        <div class="tulip t1">🌷</div><div class="tulip t2">🌷</div><div class="tulip t3">🌷</div>
+      </div>
+      <button class="primary next-btn">Taklifnomani ochish <span>→</span></button>
+      <div class="hint">Davom etish uchun bosing</div>
+    </section>
 
-            <div class="hero-top">
-                <span class="eyebrow">SPECIAL INVITATION</span>
-                <span class="date-chip">2026</span>
-            </div>
+    <section class="screen" data-screen="1">
+      <div class="number">01</div>
+      <p class="overline">UCHRASHUV EGASI</p>
+      <h2>Farida</h2>
+      <div class="quote-card"><div class="quote">“</div><p>Sizni samimiy suhbat va yoqimli kayfiyatga boy uchrashuvga taklif qilaman. Kelishingiz bu kunni yanada chiroyli qiladi.</p></div>
+      <div class="cards">
+        <div class="info-card"><span class="icon">⌖</span><small>MANZIL</small><strong>Adoda yoki TSUM</strong><p>Qaysi joy qulay bo‘lsa, birgalikda tanlaymiz.</p></div>
+        <div class="info-card"><span class="icon">◷</span><small>SANA VA VAQT</small><strong>Kelishiladi</strong><p>O‘zingizga qulay vaqtni keyin yozib qo‘ying.</p></div>
+      </div>
+      <div class="actions"><button class="secondary prev-btn">← Ortga</button><button class="primary next-btn">Rejani ko‘rish →</button></div>
+    </section>
 
-            <div class="hero-content">
-                <p class="small-label">SIZ UCHUN</p>
-                <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
-                <p class="intro">
-                    Samimiy suhbat, chiroyli kayfiyat va yoqimli uchrashuv uchun
-                    sizni maxsus taklif qilaman.
-                </p>
-            </div>
+    <section class="screen" data-screen="2">
+      <div class="number">02</div>
+      <p class="overline">UCHRASHUV REJASI</p>
+      <h2>Bugungi dastur</h2>
+      <div class="timeline">
+        <div class="plan-item"><b>1</b><div><small>01</small><h3>Yoqimli suhbat</h3><p>Bu yerga birinchi rejangizni yozing.</p></div></div>
+        <div class="plan-item"><b>2</b><div><small>02</small><h3>Birgalikdagi vaqt</h3><p>Bu yerga ikkinchi rejangizni yozing.</p></div></div>
+        <div class="plan-item"><b>3</b><div><small>03</small><h3>Chiroyli yakun</h3><p>Bu yerga uchinchi rejangizni yozing.</p></div></div>
+      </div>
+      <div class="actions"><button class="secondary prev-btn">← Ortga</button><button class="primary next-btn">Yakun →</button></div>
+    </section>
 
-            <div class="scroll-note">
-                <span class="line"></span>
-                <span>pastga suring</span>
-            </div>
-        </section>
+    <section class="screen final-screen" data-screen="3">
+      <div class="final-flower">🌷</div>
+      <div class="number">03</div>
+      <p class="overline">SIZNI KUTAMAN</p>
+      <h2>Chiroyli bir kun<br><em>birga bo‘lsin</em></h2>
+      <p class="lead final-lead">Kelishingizdan xursand bo‘laman. Eng yaxshi xotiralar oddiy uchrashuvlardan boshlanadi. ✨</p>
+      <div class="signature">Farida ♡</div>
+      <button class="secondary restart-btn">↻ Boshidan ko‘rish</button>
+    </section>
+  </main>
 
-        <!-- DETAILS -->
-        <section class="details">
-            <div class="section-heading">
-                <span class="section-number">01</span>
-                <div>
-                    <p class="section-kicker">UCHRASHUV EGASI</p>
-                    <h2>Farida</h2>
-                </div>
-            </div>
-
-            <div class="glass-card greeting">
-                <span class="quote-mark">“</span>
-                <p>
-                    Sizni yaxshi kayfiyat va samimiy suhbatga boy
-                    uchrashuvga taklif qilaman. Sizning tashrifingiz
-                    bu kunni yanada chiroyli qiladi.
-                </p>
-            </div>
-
-            <div class="info-grid">
-                <article class="info-card">
-                    <div class="icon">⌖</div>
-                    <span>MANZIL</span>
-                    <strong>Adoda yoki TSUM</strong>
-                    <small>aniq joy keyin belgilanadi</small>
-                </article>
-
-                <article class="info-card">
-                    <div class="icon">◷</div>
-                    <span>SANA VA VAQT</span>
-                    <strong>Kelishiladi</strong>
-                    <small>siz o‘zingiz qo‘shishingiz mumkin</small>
-                </article>
-            </div>
-        </section>
-
-        <!-- PLAN -->
-        <section class="plan">
-            <div class="section-heading">
-                <span class="section-number">02</span>
-                <div>
-                    <p class="section-kicker">UCHRASHUV REJASI</p>
-                    <h2>Bugungi dastur</h2>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot">1</div>
-                    <div>
-                        <span>01</span>
-                        <h3>Yoqimli suhbat</h3>
-                        <p>Bu yerga o‘zingizning rejangizni yozing.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot">2</div>
-                    <div>
-                        <span>02</span>
-                        <h3>Birgalikdagi vaqt</h3>
-                        <p>Bu yerga ikkinchi bandni yozing.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot">3</div>
-                    <div>
-                        <span>03</span>
-                        <h3>Yakuniy lahzalar</h3>
-                        <p>Bu yerga uchinchi bandni yozing.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- MUSIC -->
-        <section class="music-section">
-            <div class="music-card">
-                <div class="vinyl"><span>♪</span></div>
-                <div class="music-text">
-                    <span>OUR MOMENT</span>
-                    <strong>Uchrashuv uchun musiqa</strong>
-                    <small>music.mp3 faylini shu papkaga joylang</small>
-                </div>
-                <button id="musicBtn" class="music-btn" aria-label="Musiqani yoqish">
-                    ▶
-                </button>
-            </div>
-            <audio id="bgMusic" loop src="music.mp3"></audio>
-        </section>
-
-        <!-- FINAL -->
-        <section class="final">
-            <div class="final-flower">🌷</div>
-            <p class="section-kicker">SIZNI KUTAMAN</p>
-            <h2>Bir piyola suhbatdan<br><em>chiroyli xotiraga</em></h2>
-            <p class="final-text">
-                Kelishingizdan xursand bo‘laman. ✨
-            </p>
-            <div class="signature">Farida ♡</div>
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
+  <audio id="bgMusic" loop preload="none" src="music.mp3"></audio>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
