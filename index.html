@@ -1,78 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#102a43">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Farida — Uchrashuvga taklifnoma</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:#102a43;background:linear-gradient(135deg,#fff9cf 0%,#e8f7ff 52%,#fff3a8 100%)}
+.app{width:100%;height:100dvh;max-width:760px;margin:auto;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 12%,rgba(255,218,45,.48),transparent 28%),radial-gradient(circle at 5% 85%,rgba(66,160,218,.25),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.2),rgba(225,246,255,.22))}
+.top{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:absolute;left:0;right:0;top:0;z-index:50}.brand{font-size:12px;font-weight:800;letter-spacing:.18em}.brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#f4c928;margin-right:7px}.music{width:40px;height:40px;border:1px solid rgba(16,42,67,.18);border-radius:50%;background:rgba(255,255,255,.6);font-size:18px;color:#102a43;cursor:pointer}.music.on{background:#102a43;color:#fff}.bar{position:absolute;top:64px;left:22px;right:22px;height:3px;background:rgba(16,42,67,.12);z-index:50;border-radius:10px}.bar b{display:block;height:100%;width:25%;background:#f4c928;border-radius:10px;transition:width .35s}
+.screen{position:absolute;inset:0;padding:92px 30px 28px;display:flex;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(28px);transition:opacity .3s ease,transform .3s ease,visibility 0s linear .3s;overflow:hidden}.screen.active{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(0);transition-delay:0s}
+.badge,.over{font-size:10px;font-weight:800;letter-spacing:.2em;color:#60798a}.badge{align-self:flex-start;padding:9px 13px;border:1px solid rgba(16,42,67,.16);border-radius:999px;background:rgba(255,255,255,.55)}.hero{margin-top:68px;position:relative;z-index:4}.hero h1,h2{font-family:Georgia,'Times New Roman',serif}.hero h1{font-size:clamp(53px,10vw,88px);line-height:.9;letter-spacing:-.055em;color:#102a43}.hero h1 em,h2 em{font-style:italic;color:#d5a700}.lead{margin-top:25px;max-width:410px;font-size:15px;line-height:1.7;color:#405b6e}.btn{border:0;border-radius:999px;padding:14px 21px;font-size:13px;font-weight:800;cursor:pointer}.primary{background:#102a43;color:#fff;box-shadow:0 12px 30px rgba(16,42,67,.18)}.secondary{background:rgba(255,255,255,.65);color:#102a43;border:1px solid rgba(16,42,67,.14)}.next-first{margin-top:auto;align-self:flex-start}.hint{font-size:10px;color:#7890a0;margin-top:10px}.flowers{position:absolute;right:-10px;top:125px;width:280px;height:390px;pointer-events:none}.flower{position:absolute;width:110px;height:255px}.flower .stem{position:absolute;width:7px;height:205px;left:54px;top:78px;background:linear-gradient(#58a248,#256b40);border-radius:20px}.flower .leaf{position:absolute;width:75px;height:42px;background:#4d9447;border-radius:100% 0 100% 0;top:195px;left:0;transform:rotate(-22deg)}.flower .bud{position:absolute;width:96px;height:105px;top:0;left:9px;background:linear-gradient(135deg,#fff06a,#f4c500 65%,#e6a900);clip-path:polygon(0 17%,25% 34%,39% 0,56% 30%,79% 5%,100% 16%,92% 62%,74% 88%,50% 100%,24% 87%,7% 60%);filter:drop-shadow(8px 10px 10px rgba(125,92,0,.15))}.f1{right:35px;top:0;transform:rotate(6deg)}.f2{right:105px;top:105px;transform:scale(.78) rotate(-8deg)}.f3{right:-10px;top:175px;transform:scale(.68) rotate(13deg);opacity:.8}
+.num{width:44px;height:44px;display:grid;place-items:center;background:#f4c928;border-radius:50%;font-weight:800;font-size:12px;margin-bottom:18px}.screen h2{font-size:clamp(40px,8vw,58px);line-height:1;letter-spacing:-.04em}.quote{margin-top:24px;padding:25px 26px;border-radius:24px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.8);box-shadow:0 15px 40px rgba(30,70,100,.08);color:#405b6e;font-size:14px;line-height:1.7;position:relative}.quote:after{content:'“';position:absolute;right:20px;top:-12px;font:80px Georgia;color:rgba(244,201,40,.55)}.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.card{padding:19px;border-radius:21px;background:rgba(255,255,255,.7);box-shadow:0 12px 30px rgba(30,70,100,.06)}.icon{display:block;font-size:23px;color:#d0a400;margin-bottom:13px}.card small,.plan small{font-size:9px;letter-spacing:.18em;color:#7890a0;font-weight:800}.card strong{display:block;margin:7px 0;color:#102a43;font-size:16px}.card p,.plan p{font-size:12px;color:#718596;line-height:1.5}.actions{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;gap:10px}.actions .btn{flex:1}.timeline{position:relative;margin-top:25px}.timeline:before{content:'';position:absolute;left:20px;top:21px;bottom:21px;width:1px;background:rgba(61,143,209,.3)}.plan{display:grid;grid-template-columns:42px 1fr;gap:16px;margin-bottom:16px;position:relative}.plan>b{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#f4c928;z-index:2}.plan h3{font-size:18px;margin:5px 0}.final{align-items:center;text-align:center;justify-content:center}.final .num{margin-bottom:14px}.finalflower{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.72);font-size:38px;margin-bottom:22px}.final .lead{margin-left:auto;margin-right:auto}.sign{font:italic 25px Georgia,serif;color:#c39a00;margin:26px 0}.restart{width:auto}
+@media(max-width:560px){.screen{padding:82px 20px 20px}.top{padding:0 18px}.bar{left:18px;right:18px}.hero{margin-top:50px}.hero h1{font-size:54px}.lead{font-size:14px}.flowers{right:-95px;top:135px;transform:scale(.82)}.cards{grid-template-columns:1fr}.quote{padding:21px}.actions .btn{padding:13px 12px}.screen h2{font-size:43px}}
+</style>
 </head>
 <body>
-<div class="bg-flower flower-a">🌷</div>
-<div class="bg-flower flower-b">🌷</div>
 <div class="app">
-  <header class="topbar">
-    <div class="brand"><span class="brand-dot"></span> FARIDA</div>
-    <button id="musicBtn" class="music-toggle" aria-label="Musiqani yoqish">♪</button>
-  </header>
+<header class="top"><div class="brand"><i></i> FARIDA</div><button class="music" id="musicBtn" aria-label="Musiqani yoqish">♪</button></header>
+<div class="bar"><b id="bar"></b></div>
 
-  <div class="progress"><span id="progressBar"></span></div>
+<section class="screen active" id="s0">
+  <div class="badge">SPECIAL INVITATION · 2026</div>
+  <div class="hero"><div class="over">SIZ UCHUN</div><h1>Uchrashuvga<br><em>taklifnoma</em></h1><p class="lead">Samimiy suhbat, chiroyli kayfiyat va yoqimli uchrashuv uchun sizni maxsus taklif qilaman.</p></div>
+  <div class="flowers"><div class="flower f1"><span class="bud"></span><span class="stem"></span><span class="leaf"></span></div><div class="flower f2"><span class="bud"></span><span class="stem"></span><span class="leaf"></span></div><div class="flower f3"><span class="bud"></span><span class="stem"></span><span class="leaf"></span></div></div>
+  <button class="btn primary next next-first">Taklifnomani ochish&nbsp; →</button><div class="hint">Davom etish uchun bosing</div>
+</section>
 
-  <main>
-    <section class="screen active" data-screen="0">
-      <div class="hero-badge">SPECIAL INVITATION</div>
-      <div class="hero-copy">
-        <p class="overline">SIZ UCHUN</p>
-        <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
-        <p class="lead">Birgalikda chiroyli vaqt o‘tkazish, samimiy suhbat va yangi xotiralar uchun sizni uchrashuvga taklif qilaman.</p>
-      </div>
-      <div class="tulips">
-        <div class="tulip t1">🌷</div><div class="tulip t2">🌷</div><div class="tulip t3">🌷</div>
-      </div>
-      <button class="primary next-btn">Taklifnomani ochish <span>→</span></button>
-      <div class="hint">Davom etish uchun bosing</div>
-    </section>
+<section class="screen" id="s1">
+  <div class="num">01</div><div class="over">UCHRASHUV EGASI</div><h2>Farida</h2>
+  <div class="quote">Sizni yaxshi kayfiyat va samimiy suhbatga boy uchrashuvga taklif qilaman. Sizning tashrifingiz bu kunni yanada chiroyli qiladi.</div>
+  <div class="cards"><div class="card"><span class="icon">⌖</span><small>MANZIL</small><strong>Adoda yoki TSUM</strong><p>Aniq joy keyin belgilanadi.</p></div><div class="card"><span class="icon">◷</span><small>SANA VA VAQT</small><strong>Kelishiladi</strong><p>Sana va vaqtni o‘zingiz qo‘shasiz.</p></div></div>
+  <div class="actions"><button class="btn secondary prev">← Ortga</button><button class="btn primary next">Rejani ko‘rish →</button></div>
+</section>
 
-    <section class="screen" data-screen="1">
-      <div class="number">01</div>
-      <p class="overline">UCHRASHUV EGASI</p>
-      <h2>Farida</h2>
-      <div class="quote-card"><div class="quote">“</div><p>Sizni samimiy suhbat va yoqimli kayfiyatga boy uchrashuvga taklif qilaman. Kelishingiz bu kunni yanada chiroyli qiladi.</p></div>
-      <div class="cards">
-        <div class="info-card"><span class="icon">⌖</span><small>MANZIL</small><strong>Adoda yoki TSUM</strong><p>Qaysi joy qulay bo‘lsa, birgalikda tanlaymiz.</p></div>
-        <div class="info-card"><span class="icon">◷</span><small>SANA VA VAQT</small><strong>Kelishiladi</strong><p>O‘zingizga qulay vaqtni keyin yozib qo‘ying.</p></div>
-      </div>
-      <div class="actions"><button class="secondary prev-btn">← Ortga</button><button class="primary next-btn">Rejani ko‘rish →</button></div>
-    </section>
+<section class="screen" id="s2">
+  <div class="num">02</div><div class="over">UCHRASHUV REJASI</div><h2>Bugungi dastur</h2>
+  <div class="timeline"><div class="plan"><b>1</b><div><small>01</small><h3>Yoqimli suhbat</h3><p>Bu yerga birinchi rejangizni yozing.</p></div></div><div class="plan"><b>2</b><div><small>02</small><h3>Birgalikdagi vaqt</h3><p>Bu yerga ikkinchi rejangizni yozing.</p></div></div><div class="plan"><b>3</b><div><small>03</small><h3>Chiroyli yakun</h3><p>Bu yerga uchinchi rejangizni yozing.</p></div></div></div>
+  <div class="actions"><button class="btn secondary prev">← Ortga</button><button class="btn primary next">Yakun →</button></div>
+</section>
 
-    <section class="screen" data-screen="2">
-      <div class="number">02</div>
-      <p class="overline">UCHRASHUV REJASI</p>
-      <h2>Bugungi dastur</h2>
-      <div class="timeline">
-        <div class="plan-item"><b>1</b><div><small>01</small><h3>Yoqimli suhbat</h3><p>Bu yerga birinchi rejangizni yozing.</p></div></div>
-        <div class="plan-item"><b>2</b><div><small>02</small><h3>Birgalikdagi vaqt</h3><p>Bu yerga ikkinchi rejangizni yozing.</p></div></div>
-        <div class="plan-item"><b>3</b><div><small>03</small><h3>Chiroyli yakun</h3><p>Bu yerga uchinchi rejangizni yozing.</p></div></div>
-      </div>
-      <div class="actions"><button class="secondary prev-btn">← Ortga</button><button class="primary next-btn">Yakun →</button></div>
-    </section>
-
-    <section class="screen final-screen" data-screen="3">
-      <div class="final-flower">🌷</div>
-      <div class="number">03</div>
-      <p class="overline">SIZNI KUTAMAN</p>
-      <h2>Chiroyli bir kun<br><em>birga bo‘lsin</em></h2>
-      <p class="lead final-lead">Kelishingizdan xursand bo‘laman. Eng yaxshi xotiralar oddiy uchrashuvlardan boshlanadi. ✨</p>
-      <div class="signature">Farida ♡</div>
-      <button class="secondary restart-btn">↻ Boshidan ko‘rish</button>
-    </section>
-  </main>
-
-  <audio id="bgMusic" loop preload="none" src="music.mp3"></audio>
+<section class="screen final" id="s3">
+  <div class="finalflower">🌷</div><div class="num">03</div><div class="over">SIZNI KUTAMAN</div><h2>Bir piyola suhbatdan<br><em>chiroyli xotiraga</em></h2><p class="lead">Kelishingizdan xursand bo‘laman. ✨</p><div class="sign">Farida ♡</div><button class="btn secondary restart">↻ Boshidan ko‘rish</button>
+</section>
+<audio id="music" loop src="music.mp3"></audio>
 </div>
-<script src="script.js"></script>
+<script>
+(function(){
+ const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar');let current=0;
+ function show(n){current=Math.max(0,Math.min(n,screens.length-1));screens.forEach((s,i)=>s.classList.toggle('active',i===current));bar.style.width=((current+1)/screens.length*100)+'%';}
+ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
+ document.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
+ document.querySelector('.restart').addEventListener('click',()=>show(0));
+ const music=document.getElementById('music'),mb=document.getElementById('musicBtn');
+ mb.addEventListener('click',async()=>{if(music.paused){try{await music.play();mb.classList.add('on');mb.textContent='Ⅱ'}catch(e){alert('music.mp3 topilmadi. Uni index.html bilan bir papkaga qo‘ying.')}}else{music.pause();mb.classList.remove('on');mb.textContent='♪'}});
+ show(0);
+})();
+</script>
 </body>
 </html>
