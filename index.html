@@ -233,20 +233,24 @@ body{
   font-weight: 600;
 }
 
-/* Modern Illustration Area */
+/* Modern Image Area */
 .illustration{
-  margin-top:12px;
+  margin-top:16px;
   width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.illustration svg{
+.hero-img{
   width:100%;
-  max-width:360px;
+  max-width:380px;
   height:auto;
+  max-height:240px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow: 0 15px 30px rgba(120, 53, 15, 0.18);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   display:block;
-  filter: drop-shadow(0 15px 20px rgba(217, 119, 6, 0.12));
 }
 
 /* Screen 1, 2, 3 components */
@@ -487,7 +491,7 @@ body{
 </header>
 <div class="bar"><b id="bar"></b></div>
 
-<!-- SCREEN 0: Hero & Realistic Illustration Based on Image -->
+<!-- SCREEN 0: Hero & Image -->
 <section class="screen active" id="s0">
   <div class="badge" id="liveTime">yuklanmoqda…</div>
   <div class="hero">
@@ -497,90 +501,7 @@ body{
   </div>
   
   <div class="illustration">
-    <svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Soft Shadow Floor -->
-      <ellipse cx="190" cy="248" rx="150" ry="10" fill="#d97706" fill-opacity="0.12"/>
-
-      <!-- BOY (Mirabbos - Elegant Blue Suit) -->
-      <g id="boy">
-        <!-- Blue Suit Coat -->
-        <path d="M75 250 V185 C75 168 90 156 108 156 C126 156 141 168 141 185 V250 Z" fill="#1e3a8a"/>
-        <!-- Inner White Shirt & Tie -->
-        <path d="M101 156 L108 175 L115 156 Z" fill="#ffffff"/>
-        <!-- Neck -->
-        <rect x="103" y="144" width="10" height="14" rx="4" fill="#fcd34d" opacity="0.4"/>
-        <rect x="103" y="144" width="10" height="14" rx="4" fill="#f87171" opacity="0.2"/>
-        <rect x="103" y="144" width="10" height="14" rx="4" fill="#fbcfe8" opacity="0.8"/>
-        <!-- Head -->
-        <circle cx="108" cy="126" r="20" fill="#fbcfe8"/>
-        <!-- Stylish Hair -->
-        <path d="M88 124 C88 106 98 103 108 103 C122 103 128 110 128 124 C122 119 114 117 108 117 C98 117 92 120 88 124 Z" fill="#291e17"/>
-        <!-- Extended Arm presenting bouquet -->
-        <path d="M125 175 C148 172 165 170 180 172" stroke="#1e3a8a" stroke-width="12" stroke-linecap="round"/>
-        <circle cx="180" cy="172" r="6" fill="#fbcfe8"/>
-      </g>
-
-      <!-- GIRL (Farida - Elegant Burgundy Dress) -->
-      <g id="girl">
-        <!-- Burgundy Dress -->
-        <path d="M235 250 L246 172 C253 166 269 166 276 172 L287 250 Z" fill="#881337"/>
-        <!-- Neck -->
-        <rect x="256" y="144" width="10" height="16" rx="4" fill="#ffd1d9"/>
-        <!-- Head -->
-        <circle cx="261" cy="126" r="19" fill="#ffd1d9"/>
-        <!-- Long Wavy Elegant Hair -->
-        <path d="M240 126 C240 102 254 99 261 99 C274 99 282 107 282 126 C284 150 279 175 279 185 C274 185 271 165 269 150 C263 150 252 150 248 150 C244 165 242 180 238 185 C236 175 240 145 240 126 Z" fill="#3b1700"/>
-        <!-- Blush -->
-        <circle cx="253" cy="130" r="3" fill="#f43f5e" opacity="0.5"/>
-        <!-- Extended Arm accepting bouquet -->
-        <path d="M250 175 C228 172 210 170 196 172" stroke="#881337" stroke-width="10" stroke-linecap="round"/>
-        <circle cx="196" cy="172" r="5" fill="#ffd1d9"/>
-      </g>
-
-      <!-- GIANT RICH YELLOW TULIP BOUQUET -->
-      <g id="yellow-tulips" transform="translate(168, 110)">
-        <!-- Green Stems & Leaves Base -->
-        <path d="M20 62 L20 40 M14 62 L10 42 M26 62 L30 42" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
-        <path d="M2 48 C10 48 15 52 18 62" fill="none" stroke="#22c55e" stroke-width="2.5"/>
-        <path d="M38 48 C30 48 25 52 22 62" fill="none" stroke="#22c55e" stroke-width="2.5"/>
-
-        <!-- Tulip Blooms Cluster -->
-        <!-- Tulip 1 (Center) -->
-        <path d="M20 18 C12 18 10 32 20 40 C30 32 28 18 20 18 Z" fill="#eab308"/>
-        <path d="M16 22 C18 30 20 38 20 40 C20 38 22 30 24 22 Z" fill="#facc15"/>
-        <!-- Tulip 2 (Left) -->
-        <path d="M10 24 C3 24 2 36 11 42 C18 36 17 24 10 24 Z" fill="#ca8a04"/>
-        <path d="M7 27 C10 33 11 40 11 42 Z" fill="#facc15"/>
-        <!-- Tulip 3 (Right) -->
-        <path d="M30 24 C23 24 22 36 29 42 C38 36 37 24 30 24 Z" fill="#ca8a04"/>
-        <path d="M33 27 C30 33 29 40 29 42 Z" fill="#facc15"/>
-        <!-- Tulip 4 (Top Left) -->
-        <path d="M14 10 C8 10 7 20 15 26 C21 20 20 10 14 10 Z" fill="#eab308"/>
-        <!-- Tulip 5 (Top Right) -->
-        <path d="M26 10 C20 10 19 20 25 26 C31 20 30 10 26 10 Z" fill="#eab308"/>
-        <!-- Tulip 6 (Top Center) -->
-        <path d="M20 4 C14 4 13 14 20 20 C27 14 26 4 20 4 Z" fill="#fde047"/>
-      </g>
-
-      <!-- FLOATING GLOWING HEARTS & DIAMONDS (MATCHING THE IMAGE) -->
-      <g id="floating-gems">
-        <!-- Floating Red Heart 1 -->
-        <path d="M184 75 C184 70 190 68 193 72 C196 68 202 70 202 75 C202 82 193 87 193 90 C193 87 184 82 184 75 Z" fill="#dc2626" opacity="0.9"/>
-        <!-- Floating Red Heart 2 -->
-        <path d="M172 50 C172 46 177 44 180 48 C183 44 188 46 188 50 C188 56 180 60 180 63 C180 60 172 56 172 50 Z" fill="#b91c1c" opacity="0.85"/>
-        <!-- Floating Red Heart 3 -->
-        <path d="M200 42 C200 38 204 36 207 40 C210 36 214 38 214 42 C214 47 207 51 207 53 C207 51 200 47 200 42 Z" fill="#ef4444" opacity="0.85"/>
-        
-        <!-- Glowing Yellow Diamond Gem -->
-        <polygon points="190,96 196,90 190,84 184,90" fill="#facc15"/>
-        <polygon points="190,96 196,90 190,92" fill="#eab308"/>
-        
-        <!-- Soft Bokeh Glow Circles -->
-        <circle cx="190" cy="65" r="30" fill="#fef08a" opacity="0.25"/>
-        <circle cx="180" cy="85" r="15" fill="#fef08a" opacity="0.2"/>
-        <circle cx="205" cy="55" r="18" fill="#fef08a" opacity="0.2"/>
-      </g>
-    </svg>
+    <img src="hero.jpg" alt="Mirabbos va Farida" class="hero-img">
   </div>
 
   <button class="btn primary next next-first">Taklifnomani ochish &nbsp;→</button>
