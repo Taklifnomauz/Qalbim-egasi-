@@ -107,4 +107,662 @@ body{
 }
 .music.on{
   background: linear-gradient(135deg, #a81c32 0%, #730a19 100%);
-  color
+  color:#fff;
+  box-shadow: 0 6px 20px rgba(168, 28, 50, 0.35);
+}
+
+/* Progress bar */
+.bar{
+  position:absolute;
+  top:65px;
+  left:0;
+  right:0;
+  height:4px;
+  background:rgba(136, 14, 30, 0.1);
+  z-index:50;
+}
+.bar b{
+  display:block;
+  height:100%;
+  width:20%;
+  background: linear-gradient(90deg, #a81c32, #880e1f);
+  transition:width .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Screen Layouts */
+.screen{
+  position:absolute;
+  inset:0;
+  padding:85px 20px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateX(30px);
+  transition:opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.screen.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(0);
+  transition-delay:0s;
+}
+
+/* Welcome Overlay / Gate Screen */
+.welcome-screen {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.welcome-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 38px);
+  color: #3b0910;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.welcome-subtitle {
+  font-size: 14px;
+  color: #880e1f;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+.music-warning {
+  color: #a81c32;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  display: none;
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.content-wrap{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+
+.over{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.2em;
+  color:#a81c32 !important;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.hero h1, h2{
+  font-family:'Playfair Display', serif;
+}
+.hero h1, .screen h2{
+  font-size:clamp(26px, 6vw, 36px);
+  line-height:1.2;
+  color:#3b0910 !important;
+  font-weight: 700;
+}
+.hero h1 em, h2 em{
+  font-style:italic;
+  color:#a81c32 !important;
+}
+.lead{
+  margin-top:8px;
+  font-size:13.5px;
+  line-height:1.5;
+  color:#5c242c !important;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-container{
+  width:100%;
+  margin-top:16px;
+}
+.btn{
+  border:0;
+  border-radius:999px;
+  padding:15px 24px;
+  font-size:14px;
+  font-weight:700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor:pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn:active{
+  transform: scale(0.97);
+}
+.primary{
+  background: linear-gradient(135deg, #880e1f 0%, #540813 100%) !important;
+  color:#fff !important;
+  box-shadow:0 8px 20px rgba(136, 14, 30, 0.25);
+  width:100%;
+}
+.secondary{
+  background:rgba(255,255,255,0.9) !important;
+  color:#730a19 !important;
+  border:1px solid rgba(136, 14, 30, 0.18);
+}
+.hint{
+  font-size:11px;
+  color:#a81c32 !important;
+  margin-top:6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Hero Image */
+.illustration{
+  margin:16px 0;
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.hero-img{
+  width:100%;
+  height:auto;
+  max-height:250px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow: 0 12px 30px rgba(136, 14, 30, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Quote Box */
+.quote{
+  margin-top:10px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.85);
+  border:1px solid rgba(255,255,255,0.9);
+  color:#5c242c !important;
+  font-size:13.5px;
+  line-height:1.6;
+  font-weight: 500;
+}
+
+/* Screen 1 Cards */
+.cards{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+}
+.card{
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.9);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 4px 15px rgba(136, 14, 30, 0.04);
+}
+.card-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #fde8eb;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.card-content small{
+  font-size:10.5px;
+  letter-spacing:.15em;
+  color:#a81c32 !important;
+  font-weight:800;
+  display: block;
+}
+.card-content strong{
+  display:block;
+  margin:3px 0 4px;
+  color:#3b0910 !important;
+  font-size:15px;
+  line-height: 1.3;
+}
+.card-content p{
+  font-size:12.5px;
+  line-height:1.45;
+  color:#5c242c !important;
+}
+
+.actions{
+  margin-top:auto;
+  padding-top:16px;
+  display:flex;
+  gap:10px;
+}
+.actions .btn{
+  flex:1;
+}
+
+/* Screen 2 Timeline */
+.timeline{
+  position:relative;
+  margin-top:14px;
+}
+.timeline:before{
+  content:'';
+  position:absolute;
+  left:20px;
+  top:20px;
+  bottom:20px;
+  width:2px;
+  background:linear-gradient(to bottom, #a81c32, #fde8eb);
+}
+.plan{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:14px;
+  margin-bottom:12px;
+  position:relative;
+}
+.plan>b{
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#ffffff;
+  border: 2px solid #a81c32;
+  color: #880e1f;
+  font-weight: 800;
+  z-index:2;
+}
+.plan-content{
+  background: rgba(255, 255, 255, 0.88);
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(136, 14, 30, 0.03);
+}
+.plan-content small{
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #a81c32 !important;
+  letter-spacing: 0.1em;
+  display: block;
+}
+.plan h3{
+  font-size:14.5px;
+  color: #3b0910 !important;
+  margin: 2px 0 4px;
+}
+.plan p{
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #5c242c !important;
+}
+
+/* Screen 3 Decision */
+.decision{
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+  background: radial-gradient(circle at center, rgba(253, 232, 235, 0.8) 0%, rgba(242, 216, 208, 0.3) 100%);
+}
+.decision-decor{
+  margin-bottom: 20px;
+  position: relative;
+}
+.heart-badge{
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #a81c32, #730a19);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 32px;
+  box-shadow: 0 10px 25px rgba(168, 28, 50, 0.3);
+  animation: heartPulse 2s infinite ease-in-out;
+}
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.decision-actions{
+  margin-top:24px;
+  display:flex;
+  flex-direction: column;
+  gap:12px;
+  width:100%;
+  max-width: 320px;
+}
+.yes-btn{
+  background: linear-gradient(135deg, #a81c32 0%, #880e1f 100%) !important;
+  color:#fff !important;
+  width: 100%;
+  padding: 16px;
+  font-size: 15px;
+}
+.no-btn{
+  background:rgba(255,255,255,0.9) !important;
+  color:#730a19 !important;
+  border:1px solid rgba(136, 14, 30, 0.18);
+  width: 100%;
+  padding: 14px;
+}
+
+/* Screen 4 Final */
+.final{
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+}
+.tulip-sticker{
+  width:100px;
+  height:100px;
+  margin-bottom:14px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
+}
+
+.sign{
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size:28px;
+  color:#a81c32 !important;
+  margin:16px 0 12px;
+  font-weight: 700;
+}
+
+@media(min-width:768px){
+  body{ padding:30px; }
+  .app{
+    max-width: 620px;
+    height: 820px;
+    max-height: 90dvh;
+    border-radius:32px;
+    border: 6px solid rgba(255, 255, 255, 0.35);
+  }
+  .screen{ padding: 90px 40px 32px; }
+  .hero-img{ max-height: 300px; }
+  .cards{ grid-template-columns: repeat(2, 1fr); display: grid; }
+  .decision-actions{ flex-direction: row; max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+<div class="app">
+<header class="top">
+  <div class="brand-wrap">
+    <div class="brand">FARIDA</div>
+    <div class="live-clock" id="liveClock">00:00</div>
+  </div>
+  <button class="music" id="musicBtn" aria-label="Musiqani yoqish">♪</button>
+</header>
+<div class="bar"><b id="bar"></b></div>
+
+<section class="screen welcome-screen active" id="swel">
+  <div>
+    <h1 class="welcome-title">Farida bintu Abduvahob</h1>
+    <p class="welcome-subtitle">Siz uchun maxsus tayyorlandi ✨</p>
+    <button class="btn primary" id="enterBtn">Bu yerni bosing ❤️</button>
+    <div class="music-warning" id="musicWarn">Iltimos, avval tepadagi musiqa tugmasini bosing 🎵</div>
+  </div>
+</section>
+
+<section class="screen" id="s0">
+  <div class="content-wrap">
+    <div class="hero">
+      <div class="over">FARIDA BU SIZ UCHUN !</div>
+      <h1>Uchrashuvga<br><em>taklifnoma</em></h1>
+      <p class="lead">Salom! Ba'zan oddiy bir kunni ham esda qolarli va go'zal lahzalarga aylantirish o'z qo'limizda bo'ladi. Seni shinam maskanda birgalikda vaqt o'tkazishga, yoqimli suhbat va shirin kofe bilan kunimizni yanada yorqinroq qilishga taklif qilaman. Sen bilan suhbatlashish va dilkash vaqt o'tkazishni juda xohlayman.</p>
+    </div>
+    
+    <div class="illustration">
+      <img src="1.jpg" alt="Mirabbos va Farida" class="hero-img">
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <button class="btn primary next">Taklifnomani ochish &nbsp;→</button>
+    <div class="hint">Davom etish uchun bosing</div>
+  </div>
+</section>
+
+<section class="screen" id="s1">
+  <div class="content-wrap">
+    <div class="over"></div>
+    <h2>Farida</h2>
+    <div class="quote">
+      Oddiy kunni biroz boshqacha va esda qolarli o'tkazish uchun kichik bahona topdim. Birgalikda vaqt o'tkazish, samimiy gurunglashish va yaxshi kayfiyat ulashish uchun seni taklif qilaman. Uchrashuvimiz joyi va vaqti bilan pastda tanishishing mumkin
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <div class="card-content">
+          <small>MANZIL</small>
+          <strong>Adoda yoki TSUM</strong>
+          <p>Aniq joy va shaffof muhit</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">⏰</div>
+        <div class="card-content">
+          <small>SANA VA VAQT</small>
+          <strong>Kelishiladi</strong>
+          <p>Siz uchun eng qulay sana va vaqtni tanlaymiz </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn secondary prev">← Ortga</button>
+    <button class="btn primary next">Rejani ko‘rish →</button>
+  </div>
+</section>
+
+<section class="screen" id="s2">
+  <div class="content-wrap">
+    <div class="over">UCHRASHUV REJASI</div>
+    <h2>Bugungi dastur</h2>
+    
+    <div class="timeline">
+      <div class="plan">
+        <b>1</b>
+        <div class="plan-content">
+          <small>01-LAHZA</small>
+          <h3>Iliq qarshilash</h3>
+          <p>Bir finjon issiq kofe/choy ustida kayfiyatni ko'tarish</p>
+        </div>
+      </div>
+      <div class="plan">
+        <b>2</b>
+        <div class="plan-content">
+          <small>02-LAHZA</small>
+          <h3>Birgalikdagi lahzalar</h3>
+          <p>Shahar bo'ylab yoqimli sayr va esda qolarli suratlar</p>
+        </div>
+      </div>
+      <div class="plan">
+        <b>3</b>
+        <div class="plan-content">
+          <small>03-LAHZA</small>
+          <h3>Kino va desert</h3>
+          <p>Kino zalidagi maroqli hordiq va unutilmas shirin lahzalar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn secondary prev">← Ortga</button>
+    <button class="btn primary next">Javob berish →</button>
+  </div>
+</section>
+
+<section class="screen decision" id="s3">
+  <div class="decision-decor">
+    <div class="heart-badge">♥</div>
+  </div>
+  <div class="over"></div>
+  <h2>FARIDA </h2>
+  <p class="lead">Uchrashuvga taklifimni qabul qilasizmi?</p>
+  
+  <div class="decision-actions">
+    <button class="btn yes-btn" id="yesBtn">Taklifni qabul qilaman ❤️</button>
+    <button class="btn no-btn" id="noBtn">Taklifni rad etaman</button>
+  </div>
+</section>
+
+<section class="screen final" id="s4">
+  <div class="tulip-sticker">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fde8eb" stroke-width="3"/>
+      <path d="M50 82 V52" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M50 68 C40 65 35 55 38 48 C42 55 46 62 50 68 Z" fill="#22c55e"/>
+      <path d="M50 52 C32 46 28 22 42 14 C47 20 49 20 50 14 C51 20 53 20 58 14 C72 22 68 46 50 52 Z" fill="#eab308"/>
+      <path d="M43 18 C47 25 49 35 50 52 C51 35 53 25 57 18 C53 22 47 22 43 18 Z" fill="#facc15"/>
+      <circle cx="44" cy="32" r="2" fill="#451a03"/>
+      <circle cx="56" cy="32" r="2" fill="#451a03"/>
+      <path d="M47 37 Q50 40 53 37" fill="none" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="40" cy="35" r="2" fill="#f87171" opacity="0.6"/>
+      <circle cx="60" cy="35" r="2" fill="#f87171" opacity="0.6"/>
+    </svg>
+  </div>
+  <div class="over">SIZNI KUTAMAN</div>
+  <h2>Bir piyola suhbatdan<br><em>chiroyli xotiraga</em></h2>
+  <p class="lead">Kelishingizdan juda xursand bo‘laman! ✨</p>
+  <div class="sign">Hurmat ila Mirabbos ♡</div>
+  <button class="btn secondary restart">↻ Boshidan ko‘rish</button>
+</section>
+
+<audio id="music" loop src="music.mp3"></audio>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+(function(){
+ const screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar');
+ let current=0;
+ let isMusicPlaying=false;
+ let isCountingDown=false;
+ 
+ function show(n){
+   current=Math.max(0,Math.min(n,screens.length-1));
+   screens.forEach((s,i)=>s.classList.toggle('active',i===current));
+   bar.style.width=((current+1)/screens.length*100)+'%';
+ }
+ 
+ document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>show(current+1)));
+ document.querySelectorAll('.prev').forEach(b=>b.addEventListener('click',()=>show(current-1)));
+ document.querySelector('.restart').addEventListener('click',()=>show(0));
+
+ const yesBtn=document.getElementById('yesBtn'),noBtn=document.getElementById('noBtn');
+ 
+ function dodge(){
+   const maxOffset=100;
+   const x=(Math.random()-0.5)*maxOffset*2;
+   const y=(Math.random()-0.5)*maxOffset*2;
+   noBtn.style.transform=`translate(${x}px, ${y}px)`;
+ }
+ 
+ if(noBtn){
+   noBtn.addEventListener('mouseenter',dodge);
+   noBtn.addEventListener('touchstart',(e)=>{e.preventDefault();dodge();});
+ }
+ 
+ if(yesBtn){
+   yesBtn.addEventListener('click',()=>{
+     show(current+1);
+     if(typeof confetti==='function'){
+       confetti({
+         particleCount:160,
+         spread:100,
+         origin:{y:.6},
+         colors:['#eab308','#a81c32','#ffffff','#f43f5e']
+       });
+     }
+   });
+ }
+
+ /* Music & Gateway Logic */
+ const music=document.getElementById('music'),mb=document.getElementById('musicBtn');
+ const enterBtn=document.getElementById('enterBtn'),musicWarn=document.getElementById('musicWarn');
+
+ mb.addEventListener('click',async()=>{
+   if(music.paused){
+     try{
+       await music.play();
+       mb.classList.add('on');
+       mb.textContent='Ⅱ';
+       isMusicPlaying=true;
+       musicWarn.style.display='none';
+     }catch(e){
+       alert('music.mp3 topilmadi. Uni loyiha papkasiga joylang.');
+     }
+   }else{
+     music.pause();
+     mb.classList.remove('on');
+     mb.textContent='♪';
+     isMusicPlaying=false;
+   }
+ });
+
+ enterBtn.addEventListener('click',()=>{
+   if(!isMusicPlaying){
+     musicWarn.style.display='block';
+     return;
+   }
+   if(isCountingDown) return;
+   
+   isCountingDown = true;
+   let timeLeft = 17;
+   enterBtn.disabled = true;
+   enterBtn.style.opacity = "0.85";
+   enterBtn.textContent = `Ochilishiga: ${timeLeft} soniya... ⏳`;
+   
+   const timer = setInterval(()=>{
+     timeLeft--;
+     if(timeLeft > 0){
+       enterBtn.textContent = `Ochilishiga: ${timeLeft} soniya... ⏳`;
+     } else {
+       clearInterval(timer);
+       enterBtn.textContent = "Bu yerni bosing ❤️";
+       enterBtn.disabled = false;
+       enterBtn.style.opacity = "1";
+       isCountingDown = false;
+       show(1);
+     }
+   }, 1000);
+ });
+
+ /* Real-time Clock */
+ const liveClock=document.getElementById('liveClock');
+ const months=['yanv','fevr','mart','apr','may','iyun','iyul','avg','sep','okt','noy','dek'];
+ function pad(n){return n<10?'0'+n:''+n}
+ function updateClock(){
+   const d=new Date();
+   liveClock.textContent=d.getDate()+' '+months[d.getMonth()]+' · '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+ }
+ updateClock();
+ setInterval(updateClock,1000);
+
+ show(0);
+})();
+</script>
+</body>
+</html>
