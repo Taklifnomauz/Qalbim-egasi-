@@ -46,10 +46,10 @@ body{
   right:0;
   top:0;
   z-index:50;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 .brand{
   font-size:13px;
@@ -73,7 +73,7 @@ body{
   height:42px;
   border:1px solid rgba(217, 119, 6, 0.2);
   border-radius:50%;
-  background:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.85);
   font-size:16px;
   color:#78350f;
   cursor:pointer;
@@ -140,7 +140,7 @@ body{
   padding:8px 16px;
   border:1px solid rgba(217, 119, 6, 0.25);
   border-radius:999px;
-  background:rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.75);
   backdrop-filter: blur(8px);
   font-size:11px;
   font-weight:700;
@@ -156,7 +156,7 @@ body{
   text-transform: uppercase;
 }
 .hero{
-  margin-top:20px;
+  margin-top:16px;
   position:relative;
   z-index:4;
 }
@@ -164,7 +164,7 @@ body{
   font-family:'Playfair Display', serif;
 }
 .hero h1{
-  font-size:clamp(38px,8vw,48px);
+  font-size:clamp(36px,7.5vw,46px);
   line-height:1.08;
   letter-spacing:-.02em;
   color:#451a03;
@@ -178,8 +178,8 @@ body{
   -webkit-text-fill-color: transparent;
 }
 .lead{
-  margin-top:14px;
-  font-size:15px;
+  margin-top:12px;
+  font-size:14px;
   line-height:1.6;
   color:#78350f;
   font-weight: 500;
@@ -213,7 +213,7 @@ body{
   transform: translateY(-2px);
 }
 .secondary{
-  background:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.85);
   color:#78350f;
   border:1px solid rgba(217, 119, 6, 0.2);
   backdrop-filter: blur(8px);
@@ -222,20 +222,20 @@ body{
   background:#fff;
 }
 .next-first{
-  margin-top:20px;
+  margin-top:16px;
   width: 100%;
 }
 .hint{
   font-size:11px;
   color:#b45309;
-  margin-top:10px;
+  margin-top:8px;
   text-align: center;
   font-weight: 600;
 }
 
 /* Modern Illustration Area */
 .illustration{
-  margin-top:16px;
+  margin-top:12px;
   width:100%;
   display: flex;
   justify-content: center;
@@ -243,10 +243,10 @@ body{
 }
 .illustration svg{
   width:100%;
-  max-width:320px;
+  max-width:360px;
   height:auto;
   display:block;
-  filter: drop-shadow(0 20px 25px rgba(217, 119, 6, 0.15));
+  filter: drop-shadow(0 15px 20px rgba(217, 119, 6, 0.12));
 }
 
 /* Screen 1, 2, 3 components */
@@ -272,7 +272,7 @@ body{
   margin-top:20px;
   padding:22px 24px;
   border-radius:24px;
-  background:rgba(255,255,255,0.75);
+  background:rgba(255,255,255,0.8);
   backdrop-filter: blur(12px);
   border:1px solid rgba(255,255,255,0.9);
   box-shadow:0 20px 40px rgba(217, 119, 6, 0.08);
@@ -304,7 +304,7 @@ body{
 .card{
   padding:20px;
   border-radius:20px;
-  background:rgba(255,255,255,0.8);
+  background:rgba(255,255,255,0.85);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow:0 10px 25px rgba(217, 119, 6, 0.06);
@@ -387,7 +387,7 @@ body{
   z-index:2;
 }
 .plan-content{
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
   padding: 16px 18px;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -415,8 +415,8 @@ body{
   justify-content:center;
 }
 .decision-sticker, .final-sticker{
-  width:90px;
-  height:90px;
+  width:110px;
+  height:110px;
   margin-bottom:16px;
   animation: float 3s ease-in-out infinite;
 }
@@ -448,7 +448,7 @@ body{
   box-shadow:0 16px 35px rgba(217, 119, 6, 0.45);
 }
 .no-btn{
-  background:rgba(255,255,255,0.75);
+  background:rgba(255,255,255,0.8);
   color:#78350f;
   border:1px solid rgba(217, 119, 6, 0.2);
   width: 100%;
@@ -487,7 +487,7 @@ body{
 </header>
 <div class="bar"><b id="bar"></b></div>
 
-<!-- SCREEN 0: Hero & Yellow Tulip Bouquet Illustration -->
+<!-- SCREEN 0: Hero & Realistic Illustration Based on Image -->
 <section class="screen active" id="s0">
   <div class="badge" id="liveTime">yuklanmoqda…</div>
   <div class="hero">
@@ -497,103 +497,88 @@ body{
   </div>
   
   <div class="illustration">
-    <svg viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- Soft Shadow Floor -->
-      <ellipse cx="180" cy="262" rx="140" ry="12" fill="#d97706" fill-opacity="0.15"/>
+      <ellipse cx="190" cy="248" rx="150" ry="10" fill="#d97706" fill-opacity="0.12"/>
 
-      <!-- BOY (Mirabbos) - Left -->
+      <!-- BOY (Mirabbos - Elegant Blue Suit) -->
       <g id="boy">
-        <!-- Body / Jacket -->
-        <path d="M70 262 V210 C70 190 85 175 105 175 C125 175 140 190 140 210 V262 Z" fill="#1e293b"/>
-        <!-- Inner Shirt -->
-        <path d="M98 175 L105 195 L112 175 Z" fill="#ffffff"/>
+        <!-- Blue Suit Coat -->
+        <path d="M75 250 V185 C75 168 90 156 108 156 C126 156 141 168 141 185 V250 Z" fill="#1e3a8a"/>
+        <!-- Inner White Shirt & Tie -->
+        <path d="M101 156 L108 175 L115 156 Z" fill="#ffffff"/>
         <!-- Neck -->
-        <rect x="100" y="162" width="10" height="15" rx="5" fill="#fbcfe8" />
+        <rect x="103" y="144" width="10" height="14" rx="4" fill="#fcd34d" opacity="0.4"/>
+        <rect x="103" y="144" width="10" height="14" rx="4" fill="#f87171" opacity="0.2"/>
+        <rect x="103" y="144" width="10" height="14" rx="4" fill="#fbcfe8" opacity="0.8"/>
         <!-- Head -->
-        <circle cx="105" cy="142" r="22" fill="#fbcfe8"/>
-        <!-- Hair -->
-        <path d="M83 140 C83 120 95 118 105 118 C120 118 127 125 127 140 C120 135 112 133 105 133 C95 133 88 136 83 140 Z" fill="#0f172a"/>
-        <!-- Extended Arm holding bouquet -->
-        <path d="M125 190 C145 185 160 180 175 182" stroke="#1e293b" stroke-width="14" stroke-linecap="round"/>
-        <!-- Hand -->
-        <circle cx="176" cy="182" r="7" fill="#fbcfe8"/>
+        <circle cx="108" cy="126" r="20" fill="#fbcfe8"/>
+        <!-- Stylish Hair -->
+        <path d="M88 124 C88 106 98 103 108 103 C122 103 128 110 128 124 C122 119 114 117 108 117 C98 117 92 120 88 124 Z" fill="#291e17"/>
+        <!-- Extended Arm presenting bouquet -->
+        <path d="M125 175 C148 172 165 170 180 172" stroke="#1e3a8a" stroke-width="12" stroke-linecap="round"/>
+        <circle cx="180" cy="172" r="6" fill="#fbcfe8"/>
       </g>
 
-      <!-- GIRL (Farida) - Right -->
+      <!-- GIRL (Farida - Elegant Burgundy Dress) -->
       <g id="girl">
-        <!-- Dress -->
-        <path d="M220 262 L232 180 C240 175 256 175 264 180 L276 262 Z" fill="#f43f5e"/>
+        <!-- Burgundy Dress -->
+        <path d="M235 250 L246 172 C253 166 269 166 276 172 L287 250 Z" fill="#881337"/>
         <!-- Neck -->
-        <rect x="243" y="160" width="10" height="18" rx="5" fill="#ffd1d9"/>
+        <rect x="256" y="144" width="10" height="16" rx="4" fill="#ffd1d9"/>
         <!-- Head -->
-        <circle cx="248" cy="140" r="21" fill="#ffd1d9"/>
-        <!-- Hair (Long Elegant Wavy) -->
-        <path d="M225 140 C225 115 240 112 248 112 C262 112 271 120 271 140 C273 165 268 190 268 200 C263 200 260 180 258 165 C252 165 240 165 235 165 C230 180 228 195 224 200 C222 190 225 160 225 140 Z" fill="#451a03"/>
-        <!-- Happy Blush -->
-        <circle cx="240" cy="144" r="3" fill="#f43f5e" opacity="0.5"/>
-        <!-- Extended Arm receiving bouquet -->
-        <path d="M235 188 C215 185 200 182 188 184" stroke="#f43f5e" stroke-width="11" stroke-linecap="round"/>
-        <!-- Hand -->
-        <circle cx="186" cy="184" r="6" fill="#ffd1d9"/>
+        <circle cx="261" cy="126" r="19" fill="#ffd1d9"/>
+        <!-- Long Wavy Elegant Hair -->
+        <path d="M240 126 C240 102 254 99 261 99 C274 99 282 107 282 126 C284 150 279 175 279 185 C274 185 271 165 269 150 C263 150 252 150 248 150 C244 165 242 180 238 185 C236 175 240 145 240 126 Z" fill="#3b1700"/>
+        <!-- Blush -->
+        <circle cx="253" cy="130" r="3" fill="#f43f5e" opacity="0.5"/>
+        <!-- Extended Arm accepting bouquet -->
+        <path d="M250 175 C228 172 210 170 196 172" stroke="#881337" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="196" cy="172" r="5" fill="#ffd1d9"/>
       </g>
 
-      <!-- HUGE YELLOW TULIP BOUQUET -->
-      <g id="yellow-tulip-bouquet" transform="translate(162, 115)">
-        <!-- Bouquet Wrapper / Ribbon -->
-        <path d="M12 75 L28 42 L2 42 Z" fill="#fef3c7"/>
-        <path d="M2 42 Q15 50 28 42 L22 80 L8 80 Z" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
-        <!-- Ribbon Bow -->
-        <path d="M10 62 C2 60 0 68 8 70 C15 72 15 64 10 62 Z" fill="#d97706"/>
-        <path d="M20 62 C28 60 30 68 22 70 C15 72 15 64 20 62 Z" fill="#d97706"/>
-        <circle cx="15" cy="65" r="3" fill="#b45309"/>
+      <!-- GIANT RICH YELLOW TULIP BOUQUET -->
+      <g id="yellow-tulips" transform="translate(168, 110)">
+        <!-- Green Stems & Leaves Base -->
+        <path d="M20 62 L20 40 M14 62 L10 42 M26 62 L30 42" stroke="#15803d" stroke-width="3" stroke-linecap="round"/>
+        <path d="M2 48 C10 48 15 52 18 62" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+        <path d="M38 48 C30 48 25 52 22 62" fill="none" stroke="#22c55e" stroke-width="2.5"/>
 
-        <!-- Green Stems & Leaves -->
-        <path d="M10 45 L15 65 M18 45 L15 65 M22 45 L15 65" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M-2 35 Q8 40 12 50" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
-        <path d="M32 35 Q22 40 18 50" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
-
-        <!-- TULIP 1 (Center Main) -->
-        <g transform="translate(15, 18)">
-          <path d="M0 20 C-10 18 -12 2 -4 -6 C0 -1 2 -1 4 -6 C12 2 10 18 0 20 Z" fill="#fbbf24"/>
-          <path d="M-4 -6 C-2 5 -1 15 0 20 C1 15 2 5 4 -6 C1 -3 -1 -3 -4 -6 Z" fill="#f59e0b"/>
-          <path d="M-8 12 C-10 2 -2 -4 0 5 C-4 10 -6 15 -8 12 Z" fill="#fef08a"/>
-          <path d="M8 12 C10 2 2 -4 0 5 C4 10 6 15 8 12 Z" fill="#fef08a"/>
-        </g>
-
-        <!-- TULIP 2 (Left) -->
-        <g transform="translate(2, 24) rotate(-18)">
-          <path d="M0 18 C-9 16 -10 2 -3 -5 C0 0 2 0 3 -5 C10 2 9 16 0 18 Z" fill="#fbbf24"/>
-          <path d="M-3 -5 C-1 4 0 13 0 18 C1 13 1 4 3 -5 C1 -2 -1 -2 -3 -5 Z" fill="#f59e0b"/>
-          <path d="M-7 10 C-8 1 -1 -4 0 4 C-3 8 -5 13 -7 10 Z" fill="#fef08a"/>
-        </g>
-
-        <!-- TULIP 3 (Right) -->
-        <g transform="translate(28, 24) rotate(18)">
-          <path d="M0 18 C-9 16 -10 2 -3 -5 C0 0 2 0 3 -5 C10 2 9 16 0 18 Z" fill="#fbbf24"/>
-          <path d="M-3 -5 C-1 4 0 13 0 18 C1 13 1 4 3 -5 C1 -2 -1 -2 -3 -5 Z" fill="#f59e0b"/>
-          <path d="M7 10 C8 1 1 -4 0 4 C3 8 5 13 7 10 Z" fill="#fef08a"/>
-        </g>
-
-        <!-- TULIP 4 (Top Left) -->
-        <g transform="translate(8, 6) rotate(-8)">
-          <path d="M0 16 C-8 14 -9 2 -3 -4 C0 0 2 0 3 -4 C9 2 8 14 0 16 Z" fill="#f59e0b"/>
-          <path d="M-6 9 C-7 1 -1 -3 0 3 C-3 7 -4 11 -6 9 Z" fill="#fef08a"/>
-        </g>
-
-        <!-- TULIP 5 (Top Right) -->
-        <g transform="translate(22, 8) rotate(10)">
-          <path d="M0 16 C-8 14 -9 2 -3 -4 C0 0 2 0 3 -4 C9 2 8 14 0 16 Z" fill="#f59e0b"/>
-          <path d="M6 9 C7 1 1 -3 0 3 C3 7 4 11 6 9 Z" fill="#fef08a"/>
-        </g>
+        <!-- Tulip Blooms Cluster -->
+        <!-- Tulip 1 (Center) -->
+        <path d="M20 18 C12 18 10 32 20 40 C30 32 28 18 20 18 Z" fill="#eab308"/>
+        <path d="M16 22 C18 30 20 38 20 40 C20 38 22 30 24 22 Z" fill="#facc15"/>
+        <!-- Tulip 2 (Left) -->
+        <path d="M10 24 C3 24 2 36 11 42 C18 36 17 24 10 24 Z" fill="#ca8a04"/>
+        <path d="M7 27 C10 33 11 40 11 42 Z" fill="#facc15"/>
+        <!-- Tulip 3 (Right) -->
+        <path d="M30 24 C23 24 22 36 29 42 C38 36 37 24 30 24 Z" fill="#ca8a04"/>
+        <path d="M33 27 C30 33 29 40 29 42 Z" fill="#facc15"/>
+        <!-- Tulip 4 (Top Left) -->
+        <path d="M14 10 C8 10 7 20 15 26 C21 20 20 10 14 10 Z" fill="#eab308"/>
+        <!-- Tulip 5 (Top Right) -->
+        <path d="M26 10 C20 10 19 20 25 26 C31 20 30 10 26 10 Z" fill="#eab308"/>
+        <!-- Tulip 6 (Top Center) -->
+        <path d="M20 4 C14 4 13 14 20 20 C27 14 26 4 20 4 Z" fill="#fde047"/>
       </g>
 
-      <!-- FLOATING HEARTS & SPARKLES -->
-      <g id="sparkles">
-        <path d="M180 90 Q185 80 190 90 Q200 95 190 100 Q185 110 180 100 Q170 95 180 90 Z" fill="#f59e0b" opacity="0.8"/>
-        <path d="M110 100 Q113 93 116 100 Q123 103 116 106 Q113 113 110 106 Q103 103 110 100 Z" fill="#fbbf24"/>
-        <path d="M255 95 Q258 90 261 95 Q266 98 261 101 Q258 106 255 101 Q250 98 255 95 Z" fill="#f43f5e" opacity="0.7"/>
-        <!-- Tiny Hearts -->
-        <path d="M178 72 C178 68 183 66 185 70 C187 66 192 68 192 72 C192 77 185 81 185 83 C185 81 178 77 178 72 Z" fill="#f43f5e"/>
+      <!-- FLOATING GLOWING HEARTS & DIAMONDS (MATCHING THE IMAGE) -->
+      <g id="floating-gems">
+        <!-- Floating Red Heart 1 -->
+        <path d="M184 75 C184 70 190 68 193 72 C196 68 202 70 202 75 C202 82 193 87 193 90 C193 87 184 82 184 75 Z" fill="#dc2626" opacity="0.9"/>
+        <!-- Floating Red Heart 2 -->
+        <path d="M172 50 C172 46 177 44 180 48 C183 44 188 46 188 50 C188 56 180 60 180 63 C180 60 172 56 172 50 Z" fill="#b91c1c" opacity="0.85"/>
+        <!-- Floating Red Heart 3 -->
+        <path d="M200 42 C200 38 204 36 207 40 C210 36 214 38 214 42 C214 47 207 51 207 53 C207 51 200 47 200 42 Z" fill="#ef4444" opacity="0.85"/>
+        
+        <!-- Glowing Yellow Diamond Gem -->
+        <polygon points="190,96 196,90 190,84 184,90" fill="#facc15"/>
+        <polygon points="190,96 196,90 190,92" fill="#eab308"/>
+        
+        <!-- Soft Bokeh Glow Circles -->
+        <circle cx="190" cy="65" r="30" fill="#fef08a" opacity="0.25"/>
+        <circle cx="180" cy="85" r="15" fill="#fef08a" opacity="0.2"/>
+        <circle cx="205" cy="55" r="18" fill="#fef08a" opacity="0.2"/>
       </g>
     </svg>
   </div>
@@ -677,17 +662,17 @@ body{
 
 <!-- SCREEN 3: Decision Screen -->
 <section class="screen decision" id="s3">
-  <!-- Modern Sticker SVG -->
+  <!-- Ultra Modern Gem & Heart Sticker -->
   <div class="decision-sticker">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="45" fill="#fef08a"/>
-      <!-- Yellow Tulip Sticker -->
-      <path d="M50 75 C50 65 50 55 50 48" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-      <path d="M50 48 C35 45 32 25 42 16 C47 22 49 22 50 16 C51 22 53 22 58 16 C68 25 65 45 50 48 Z" fill="#f59e0b"/>
-      <path d="M42 16 C45 28 48 38 50 48 C52 38 55 28 58 16 C53 20 47 20 42 16 Z" fill="#fbbf24"/>
-      <!-- Sparkle -->
-      <path d="M22 25 L25 18 L28 25 L35 28 L28 31 L25 38 L22 31 L15 28 Z" fill="#d97706"/>
-      <path d="M72 65 L74 60 L76 65 L81 67 L76 69 L74 74 L72 69 L67 67 Z" fill="#d97706"/>
+      <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fef08a" stroke-width="3"/>
+      <circle cx="50" cy="50" r="40" fill="#fef3c7"/>
+      <!-- Modern Diamond & Heart Combined -->
+      <path d="M32 40 C32 30 42 26 50 34 C58 26 68 30 68 40 C68 54 50 66 50 72 C50 66 32 54 32 40 Z" fill="#dc2626"/>
+      <polygon points="50,22 56,30 50,38 44,30" fill="#facc15"/>
+      <!-- Sparkles -->
+      <path d="M18 28 L21 20 L24 28 L32 31 L24 34 L21 42 L18 34 L10 31 Z" fill="#d97706"/>
+      <path d="M74 68 L76 62 L78 68 L84 70 L78 72 L76 78 L74 72 L68 70 Z" fill="#d97706"/>
     </svg>
   </div>
   <div class="num">♡</div>
@@ -703,19 +688,20 @@ body{
 
 <!-- SCREEN 4: Final Screen -->
 <section class="screen final" id="s4">
-  <!-- Modern Flower Sticker SVG -->
+  <!-- Ultra Modern Yellow Tulip Sticker -->
   <div class="final-sticker">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#fef3c7" stroke-width="4"/>
       <!-- Big Smiling Yellow Tulip -->
-      <path d="M50 80 V55" stroke="#22c55e" stroke-width="5" stroke-linecap="round"/>
-      <path d="M50 55 C32 50 28 28 40 18 C46 24 48 24 50 18 C52 24 54 24 60 18 C72 28 68 50 50 55 Z" fill="#fbbf24"/>
-      <!-- Eyes & Smile -->
-      <circle cx="44" cy="34" r="2.5" fill="#451a03"/>
-      <circle cx="56" cy="34" r="2.5" fill="#451a03"/>
-      <path d="M46 40 Q50 44 54 40" fill="none" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="41" cy="37" r="2" fill="#f43f5e" opacity="0.6"/>
-      <circle cx="59" cy="37" r="2" fill="#f43f5e" opacity="0.6"/>
+      <path d="M50 82 V55" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 55 C30 50 26 26 40 16 C46 22 48 22 50 16 C52 22 54 22 60 16 C74 26 70 50 50 55 Z" fill="#eab308"/>
+      <path d="M42 20 C46 28 48 38 50 55 C52 38 54 28 58 20 C53 24 47 24 42 20 Z" fill="#facc15"/>
+      <!-- Cute Eyes & Smile -->
+      <circle cx="43" cy="34" r="2.5" fill="#451a03"/>
+      <circle cx="57" cy="34" r="2.5" fill="#451a03"/>
+      <path d="M46 41 Q50 45 54 41" fill="none" stroke="#451a03" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="39" cy="37" r="2.5" fill="#f43f5e" opacity="0.6"/>
+      <circle cx="61" cy="37" r="2.5" fill="#f43f5e" opacity="0.6"/>
     </svg>
   </div>
   <div class="num">03</div>
